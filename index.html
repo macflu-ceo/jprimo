@@ -129,18 +129,32 @@ nav{
 .g-item-body{font-size:13px;color:var(--gray);line-height:1.8;word-break:keep-all;}
 
 /* JARVIS */
-.jarvis-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.jarvis-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch;}
 .jarvis-feats{display:flex;flex-direction:column;gap:0;}
+.jarvis-feats .j-feat{flex:1;display:flex;flex-direction:column;justify-content:center;}
 .j-feat{padding:32px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
 .j-feat:first-child{padding-top:0;}
 .j-feat-n{font-size:10px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:14px;}
 .j-feat-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;}
 .j-feat-body{font-size:13px;color:var(--gray);line-height:1.8;word-break:keep-all;}
-.jarvis-box{background:var(--dark2);border-top:2px solid var(--gold);padding:44px 40px;}
-.jarvis-box-title{font-size:10px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:32px;}
-.price-rows{display:flex;flex-direction:column;gap:0;}
-.price-row{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
-.price-row:last-child{border-bottom:none;}
+/* JP자비스 다이어그램 — 박스 없음, 좌측 기능과 정확히 정렬 */
+.jarvis-diagram{background:transparent;border:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:8px;}
+.jd-node{background:var(--dark2);border:1px solid rgba(255,255,255,0.08);padding:14px 22px;text-align:center;width:100%;max-width:340px;}
+.jd-fields-node{padding:12px 16px 14px;}
+.jd-server{border-color:rgba(181,138,72,0.45);background:rgba(181,138,72,0.07);}
+.jd-tag{font-size:9px;font-weight:700;letter-spacing:0.24em;color:var(--gray);margin-bottom:6px;}
+.jd-tag-gold{color:var(--gold);}
+.jd-label{font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.jd-sub{font-size:11px;color:var(--gray-l);letter-spacing:0.02em;}
+.jd-arrow{height:12px;display:flex;align-items:center;justify-content:center;}
+.jd-arrow span{display:block;width:1px;height:12px;background:linear-gradient(to bottom,rgba(181,138,72,0.55),rgba(181,138,72,0.12));position:relative;}
+.jd-arrow span::after{content:'';position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid rgba(181,138,72,0.45);}
+.jd-fields-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;width:100%;}
+.jd-field{font-size:10.5px;color:var(--gray-l);background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);padding:7px 4px;text-align:center;letter-spacing:0.04em;}
+.jd-stores-fade{width:100%;max-width:340px;display:flex;flex-direction:column;gap:5px;}
+.jd-store{font-size:11px;color:var(--gray-l);background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);padding:10px 4px;text-align:center;letter-spacing:0.02em;}
+.jd-store-main{color:var(--white);background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.14);font-weight:600;}
+.jd-callout{margin-top:8px;font-size:11px;color:var(--gold-l);letter-spacing:0.04em;font-style:italic;text-align:center;}
 .pr-period{font-size:13px;color:var(--gray);}
 .pr-amount{font-size:17px;font-weight:700;color:var(--white);}
 .pr-amount.hi{color:var(--gold-l);}
@@ -158,6 +172,27 @@ nav{
 .sourcing-result-title{font-size:10px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:32px;}
 .sr-item{display:flex;gap:20px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
 .sr-item:last-child{border-bottom:none;}
+/* 소싱 데이터 — Excel 일러스트 + 슬롯머신 + 강점 */
+.sd-table-wrap{margin-top:60px;background:#fff;border:1px solid var(--cream2);padding:32px 28px 28px;position:relative;box-shadow:0 1px 0 rgba(10,10,14,0.04),0 24px 48px -36px rgba(10,10,14,0.18);}
+.sd-table-caption{position:absolute;top:-12px;right:24px;background:var(--cream);color:var(--gray);font-size:11px;letter-spacing:0.04em;padding:4px 12px;}
+.sd-thead{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr;gap:8px;margin-bottom:14px;}
+.sd-th{font-size:11.5px;font-weight:700;color:#6c6c7a;letter-spacing:0.04em;padding:11px 10px;text-align:center;background:var(--cream);border:1px solid var(--cream2);border-radius:999px;}
+.sd-th-hi{color:#fff;background:#C8392B;border-color:#C8392B;}
+.sd-rows-mask{position:relative;height:180px;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 50%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 50%,transparent 100%);}
+.sd-rows-track{display:flex;flex-direction:column;will-change:transform;}
+.sd-row{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1fr 1fr;gap:8px;height:60px;align-items:center;flex-shrink:0;font-feature-settings:'tnum';}
+.sd-cell{padding:8px 10px;text-align:center;font-size:14.5px;color:var(--dark);font-weight:600;}
+.sd-cell:first-child{text-align:left;font-weight:700;letter-spacing:-0.01em;}
+.sd-cell-hi{color:#C8392B;font-weight:800;}
+.sd-mobile-note{display:none;}
+.sd-strengths-title{margin-top:60px;font-size:14px;font-weight:700;color:var(--dark);letter-spacing:0.06em;text-align:center;position:relative;display:flex;align-items:center;justify-content:center;gap:14px;}
+.sd-strengths-title::before,.sd-strengths-title::after{content:'';flex:0 0 36px;height:1px;background:var(--cream2);}
+.sd-strengths{margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.sd-strength{background:#fff;border:1px solid var(--cream2);padding:36px 28px;text-align:center;transition:transform .25s ease,box-shadow .25s ease;}
+.sd-strength:hover{transform:translateY(-3px);box-shadow:0 14px 28px -16px rgba(181,138,72,0.35);}
+.sd-strength-icon{width:64px;height:64px;border-radius:50%;background:rgba(181,138,72,0.1);color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.sd-strength-title{font-size:17px;font-weight:800;color:var(--dark);margin-bottom:10px;letter-spacing:-0.01em;}
+.sd-strength-body{font-size:13px;color:var(--gray);line-height:1.7;word-break:keep-all;}
 .sr-dot{width:5px;height:5px;background:var(--gold);flex-shrink:0;margin-top:8px;}
 .sr-text{font-size:13.5px;color:var(--gray-l);line-height:1.75;word-break:keep-all;}
 .sr-text strong{color:var(--gold-l);}
@@ -191,13 +226,19 @@ nav{
 .ptable{width:100%;border-collapse:collapse;font-size:13.5px;}
 .ptable th{text-align:left;padding:14px 20px;font-size:11px;font-weight:700;color:var(--gray);border-bottom:1px solid var(--cream2);letter-spacing:0.08em;}
 .ptable th:not(:first-child){text-align:right;}
-.ptable td{padding:22px 20px;border-bottom:1px solid var(--cream2);}
+.ptable td{padding:22px 20px;border-bottom:1px solid var(--cream2);vertical-align:middle;}
 .ptable td:not(:first-child){text-align:right;}
 .ptable tr.core td{background:#FFFBF2;}
 .ptable .p-name{font-size:14px;font-weight:700;}
 .ptable .p-note{font-size:11.5px;color:var(--gray);display:block;margin-top:4px;font-weight:400;}
-.ptable .p-hi{color:var(--gold);font-weight:700;font-size:16px;}
-.onetime-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px;}
+.ptable .p-hi{color:var(--gold);}
+.ptable .p-total{display:block;font-size:22px;font-weight:900;color:var(--dark);letter-spacing:-0.01em;line-height:1.1;}
+.ptable .p-total em{font-style:normal;font-size:13px;font-weight:600;margin-left:2px;color:var(--gray);}
+.ptable .p-total.p-hi em{color:var(--gold);}
+.ptable .p-monthly{display:block;font-size:11.5px;color:var(--gray);margin-top:6px;font-weight:500;letter-spacing:0.02em;}
+.addon-section{margin-top:72px;padding-top:48px;border-top:1px solid var(--cream2);}
+.addon-label{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.24em;margin-bottom:24px;}
+.onetime-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
 .ot-card{border:1px solid var(--cream2);padding:36px 32px;transition:border-color .2s;}
 .ot-card:hover{border-color:var(--gold);}
 .ot-name{font-size:12px;color:var(--gray);margin-bottom:10px;letter-spacing:0.06em;}
@@ -208,9 +249,12 @@ nav{
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;}
 .contact-info{display:flex;flex-direction:column;gap:40px;}
 .ci-item{display:flex;flex-direction:column;gap:8px;}
+.ci-link{text-decoration:none;cursor:pointer;transition:opacity .2s;padding:6px;margin:-6px;border-radius:2px;}
+.ci-link:hover{opacity:0.85;}
+.ci-link:hover .ci-sub{color:var(--gold);}
 .ci-label{font-size:10px;font-weight:700;letter-spacing:0.22em;color:var(--gold);}
 .ci-value{font-size:18px;font-weight:700;color:var(--white);}
-.ci-sub{font-size:13px;color:var(--gray);}
+.ci-sub{font-size:13px;color:var(--gray);transition:color .2s;}
 .contact-form{display:flex;flex-direction:column;gap:14px;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .fi,.fs,.ft{
@@ -242,9 +286,12 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
 .f-links{list-style:none;display:flex;flex-direction:column;gap:14px;}
 .f-links a{font-size:13px;color:var(--gray);text-decoration:none;transition:color .2s;}
 .f-links a:hover{color:var(--gold-l);}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:32px;display:flex;justify-content:space-between;align-items:center;}
-.f-copy{font-size:12px;color:#383848;}
-.f-biz{font-size:11.5px;color:#383848;text-align:right;line-height:1.7;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:36px;display:block;}
+.f-biz{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.9;text-align:left;}
+.f-biz-name{font-size:15px;font-weight:700;color:rgba(255,255,255,0.8);margin-bottom:14px;letter-spacing:-0.005em;}
+.f-biz-row{display:flex;gap:14px;font-size:13px;color:rgba(255,255,255,0.5);}
+.f-biz-row span{color:rgba(255,255,255,0.75);font-weight:500;}
+.f-copy{margin-top:18px;font-size:11.5px;color:rgba(255,255,255,0.3);letter-spacing:0.04em;}
 
 
 /* ── 기간 선택 버튼 ── */
@@ -256,9 +303,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
 @media(max-width:640px){
   .dur-btns{display:flex;}
   .ptable thead{display:none;}
-  .ptable tbody tr{display:none;}
-  .ptable tbody tr.active{display:block;padding:20px 0;}
-  .ptable tbody tr td:first-child{display:block;margin-bottom:12px;}
+  .ptable tbody tr{display:block;padding:20px 0;border-bottom:1px solid var(--cream2);}
+  .ptable tbody tr td:first-child{display:block;margin-bottom:12px;border:none;padding:0;text-align:left!important;}
   .ptable tbody tr td:not(:first-child){display:none;}
   .dur-price-val{display:block;font-size:22px;font-weight:900;color:var(--gold);margin-top:8px;}
   .mobile-price-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--cream2);font-size:13px;}
@@ -432,8 +478,13 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
   .hero-right{min-height:320px;}
   .why-text{padding:56px 40px;}
   .guarantee-content{padding:56px 40px;}
-  .jarvis-wrap{gap:48px;}
+  .jarvis-wrap{gap:48px;align-items:start;}
+  .jarvis-diagram{padding:0;}
   .sourcing-wrap{gap:48px;}
+  .sd-strengths{grid-template-columns:1fr 1fr;}
+  .sd-thead,.sd-row{grid-template-columns:1.4fr 1fr 1fr 1fr 1fr 1fr;}
+  .sd-th{font-size:11px;padding:9px 8px;}
+  .sd-cell{font-size:13px;padding:8px;}
   .contact-wrap{gap:56px;}
   .stats-inner{grid-template-columns:repeat(3,1fr);}
   .why-grid,.ch-grid{grid-template-columns:1fr 1fr;}
@@ -477,8 +528,21 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
   .g-item-num{font-size:22px;min-width:48px;}
   .jarvis-wrap{gap:32px;padding-top:0;}
   .jarvis-box{padding:28px 24px;}
+  .jarvis-diagram{padding:0;}
+  .jd-fields-grid{grid-template-columns:repeat(3,1fr);}
   .sourcing-wrap{gap:32px;}
   .sourcing-result{padding:32px 24px;}
+  .sd-table-wrap{padding:22px 14px 18px;}
+  .sd-thead,.sd-row{grid-template-columns:1.5fr 1fr 1fr 1fr;gap:5px;}
+  .sd-thead .sd-th:nth-child(5),.sd-thead .sd-th:nth-child(6){display:none;}
+  .sd-row .sd-cell:nth-child(5),.sd-row .sd-cell:nth-child(6){display:none;}
+  .sd-rows-mask{height:160px;}
+  .sd-th{font-size:10px;padding:8px 4px;letter-spacing:0.02em;}
+  .sd-cell{font-size:11.5px;padding:6px 4px;}
+  .sd-cell:first-child{font-size:12px;}
+  .sd-mobile-note{display:block;margin-top:18px;font-size:11.5px;color:var(--gray);text-align:center;letter-spacing:0.02em;}
+  .sd-strengths{grid-template-columns:1fr;gap:14px;}
+  .sd-strength{padding:28px 24px;}
   .ch-card{padding:32px 24px;}
   .platform-list{gap:8px;}
   .platform-tag{font-size:11.5px;padding:7px 14px;}
@@ -490,14 +554,22 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
   .ptab{padding:12px 18px;font-size:12.5px;}
   .ptable{font-size:12px;}
   .ptable th,.ptable td{padding:14px 10px;}
+  .mobile-price-display{margin-top:10px;display:flex;flex-direction:column;gap:2px;}
+  .mpd-total{font-size:24px;font-weight:900;color:var(--gold);letter-spacing:-0.01em;line-height:1.1;}
+  .mpd-total em{font-style:normal;font-size:13px;font-weight:600;color:var(--gold);margin-left:2px;}
+  .mpd-monthly{font-size:12px;color:var(--gray);font-weight:500;}
+  .mpd-note{font-size:11px;color:var(--gold);font-weight:600;margin-top:2px;letter-spacing:0.02em;}
+  .addon-section{margin-top:48px;padding-top:32px;}
+  .addon-label{font-size:10.5px;letter-spacing:0.2em;}
   .onetime-grid{grid-template-columns:1fr;gap:10px;}
   .form-row{grid-template-columns:1fr;}
   .contact-wrap{gap:36px;}
   .contact-info{gap:24px;}
   .ci-value{font-size:15px;}
   .footer-top{grid-template-columns:1fr;gap:32px;}
-  .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
-  .f-biz{text-align:center;}
+  .footer-bottom{padding-top:28px;}
+  .f-biz-row{flex-direction:column;gap:2px;}
+  .f-biz-row span{font-size:13.5px;}
   .onetime-grid{grid-template-columns:1fr;}
 }
 
@@ -843,24 +915,45 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
           <div class="j-feat-title">원하는 것만 골라 내 스토어에</div>
           <div class="j-feat-body">800개+ 브랜드 중 스토어 콘셉트에 맞는 브랜드와 카테고리를 선택해 운영할 수 있습니다.</div>
         </div>
-        <div class="j-feat">
-          <div class="j-feat-n">04 — 마켓 확장</div>
-          <div class="j-feat-title">채널당 추가 연동 가능</div>
-          <div class="j-feat-body">기본 포함 마켓 외 원하는 채널을 추가 연동. 전체 33개 채널을 단계적으로 확장할 수 있습니다.</div>
-        </div>
       </div>
-      <div>
-        <div class="jarvis-box">
-          <div class="jarvis-box-title">JP자비스 요금</div>
-          <div class="price-rows">
-            <div class="price-row"><span class="pr-period">세팅비 (1회)</span><span class="pr-amount">300,000원</span></div>
-            <div class="price-row"><span class="pr-period">1개월</span><span class="pr-amount">600,000원/월</span></div>
-            <div class="price-row"><span class="pr-period">3개월</span><span class="pr-amount">500,000원/월</span></div>
-            <div class="price-row"><span class="pr-period">6개월</span><span class="pr-amount">400,000원/월</span></div>
-            <div class="price-row"><span class="pr-period">12개월</span><span class="pr-amount hi">300,000원/월</span></div>
-          </div>
-          <div class="price-note-row">마켓 추가 연동: 채널당 +400,000원<br>전체 33개 채널 지원</div>
+      <div class="jarvis-diagram">
+        <div class="jd-node jd-source">
+          <div class="jd-tag">SOURCE</div>
+          <div class="jd-label">이탈리아 50개+ 부티크</div>
+          <div class="jd-sub">실시간 재고 데이터</div>
         </div>
+        <div class="jd-arrow"><span></span></div>
+        <div class="jd-node jd-fields-node">
+          <div class="jd-tag">PRODUCT DATA</div>
+          <div class="jd-fields-grid">
+            <span class="jd-field">상품 코드</span>
+            <span class="jd-field">사이즈</span>
+            <span class="jd-field">색상</span>
+            <span class="jd-field">가격</span>
+            <span class="jd-field">재고</span>
+            <span class="jd-field">이미지</span>
+          </div>
+        </div>
+        <div class="jd-arrow"><span></span></div>
+        <div class="jd-node jd-server">
+          <div class="jd-tag jd-tag-gold">JP JARVIS</div>
+          <div class="jd-label">JP자비스 서버</div>
+          <div class="jd-sub">24h 재고 동기화 · 환율 가격 관리</div>
+        </div>
+        <div class="jd-arrow"><span></span></div>
+        <div class="jd-stores-fade">
+          <div class="jd-store jd-store-main">파트너 스토어</div>
+          <div class="jd-store jd-store-echo" style="opacity:0.55">파트너 스토어</div>
+          <div class="jd-store jd-store-echo" style="opacity:0.32">파트너 스토어</div>
+          <div class="jd-store jd-store-echo" style="opacity:0.15">파트너 스토어</div>
+        </div>
+        <div class="jd-callout">→ 고객 발주 시 자동 주문 처리</div>
+      </div>
+    </div>
+    <div class="platform-wrap" style="margin-top:96px;">
+      <div class="platform-label">제휴 플랫폼 & 연동 채널</div>
+      <div class="platform-list">
+        <span class="platform-tag">머스트잇</span><span class="platform-tag">발란</span><span class="platform-tag">트렌비</span><span class="platform-tag">필웨이</span><span class="platform-tag">리본즈</span><span class="platform-tag">스마트스토어</span><span class="platform-tag">쿠팡</span><span class="platform-tag">11번가</span><span class="platform-tag">SSG.COM</span><span class="platform-tag">롯데ON</span><span class="platform-tag">G마켓</span><span class="platform-tag">옥션</span><span class="platform-tag">인터파크</span><span class="platform-tag">카페24</span><span class="platform-tag">쇼피파이</span><span class="platform-tag">포이즌</span><span class="platform-tag">CJ ONSTYLE</span><span class="platform-tag">LF MALL</span><span class="platform-tag">GS SHOP</span><span class="platform-tag">아임웹</span>
       </div>
     </div>
   </div>
@@ -872,37 +965,46 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
     <p class="sec-tag fi-up">SOURCING DATA</p>
     <div class="sec-rule"></div>
     <h2 class="sec-h">자체 개발<br>소싱 데이터 프로그램</h2>
-    <p class="sec-sub fi-up d2">팔릴 상품만 골라 사입하는 데이터 기반 소싱. 재고 리스크를 획기적으로 낮춥니다.</p>
-    <div class="sourcing-wrap">
-      <div class="sourcing-steps">
-        <div class="s-step">
-          <div class="s-step-n">1</div>
-          <div>
-            <div class="s-step-title">크림(KREAM) 기반 데이터 수집</div>
-            <div class="s-step-body">크림 플랫폼의 모델명 기반 거래 데이터를 자체 개발 프로그램으로 40만개+ 상품 전체를 매일 자동 크롤링합니다.</div>
-          </div>
-        </div>
-        <div class="s-step">
-          <div class="s-step-n">2</div>
-          <div>
-            <div class="s-step-title">거래 데이터 분석</div>
-            <div class="s-step-body">언제 팔렸는지 · 얼마에 팔렸는지 · 얼마나 팔렸는지를 분석합니다. 실제 거래에 기반한 수요 데이터입니다.</div>
-          </div>
-        </div>
-        <div class="s-step">
-          <div class="s-step-n">3</div>
-          <div>
-            <div class="s-step-title">필터링 후 주 1~2회 제공</div>
-            <div class="s-step-body">이번달 판매 · 3개 이상 판매 · 마진 n원 이상 등 조건으로 필터링하여 제공합니다. 팔릴 것이 확인된 상품만 남습니다.</div>
-          </div>
-        </div>
+    <p class="sec-sub fi-up d2">크림(KREAM) 플랫폼 기반으로 50만개의 공급 가능 상품들 중 빠른 판매상품 · 마진 남는 상품을 리스트업하여 전달드립니다.</p>
+
+    <div class="sd-table-wrap">
+      <div class="sd-table-caption">설명을 돕기 위한 예시입니다.</div>
+      <div class="sd-thead">
+        <div class="sd-th">상품명</div>
+        <div class="sd-th">공급가</div>
+        <div class="sd-th">최근 판매가</div>
+        <div class="sd-th sd-th-hi">예상 마진</div>
+        <div class="sd-th">최근 판매일</div>
+        <div class="sd-th">즉시 판매가</div>
       </div>
-      <div class="sourcing-result">
-        <div class="sourcing-result-title">셀러가 얻는 것</div>
-        <div class="sr-item"><div class="sr-dot"></div><div class="sr-text"><strong>재고 리스크 최소화</strong> — 팔릴 것이 확인된 상품만 사입하기 때문에 재고 적체 가능성이 급감합니다.</div></div>
-        <div class="sr-item"><div class="sr-dot"></div><div class="sr-text"><strong>마진 기반 의사결정</strong> — 공급가와 크림 거래가를 비교해 수익성이 검증된 상품만 선별합니다.</div></div>
-        <div class="sr-item"><div class="sr-dot"></div><div class="sr-text"><strong>경쟁자보다 빠른 소싱</strong> — 주 1~2회 업데이트로 시장 수요 변화를 빠르게 반영합니다.</div></div>
-        <div class="sr-item"><div class="sr-dot"></div><div class="sr-text"><strong>40만개+ 전체 분석</strong> — 소싱 가능한 전 상품을 자동으로 분석, 기회를 놓치지 않습니다.</div></div>
+      <div class="sd-rows-mask">
+        <div class="sd-rows-track"></div>
+      </div>
+      <div class="sd-mobile-note">→ 최근에 판매된 상품만 추천합니다.</div>
+    </div>
+
+    <div class="sd-strengths-title">강점</div>
+    <div class="sd-strengths">
+      <div class="sd-strength">
+        <div class="sd-strength-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4v10l-9 4-9-4z"/><path d="M3 7l9 4 9-4"/><path d="M12 11v10"/></svg>
+        </div>
+        <div class="sd-strength-title">재고 리스크 최소화</div>
+        <div class="sd-strength-body">팔릴 것이 확인된 상품만 사입하기 때문에 재고 적체 가능성이 급감합니다.</div>
+      </div>
+      <div class="sd-strength">
+        <div class="sd-strength-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="sd-strength-title">빠른 판매 회전</div>
+        <div class="sd-strength-body">실거래 기반 수요 데이터로 검증된 상품만 골라, 사입 후 회전이 빠릅니다.</div>
+      </div>
+      <div class="sd-strength">
+        <div class="sd-strength-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="9" y1="14" x2="15" y2="14"/></svg>
+        </div>
+        <div class="sd-strength-title">주 1~2회 리스트 제공</div>
+        <div class="sd-strength-body">선택지가 충분히 많은 큐레이션 리스트를 정기적으로 받아볼 수 있습니다.</div>
       </div>
     </div>
   </div>
@@ -930,12 +1032,6 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
         <div class="ch-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B58A48" stroke-width="1.2"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
         <div class="ch-title">국내 재고 위탁판매</div>
         <div class="ch-body">국내 50억원+ 재고를 보유하고 있습니다. 직접 사입 없이도 국내 재고를 위탁받아 판매하는 구조도 가능합니다.</div>
-      </div>
-    </div>
-    <div class="platform-wrap">
-      <div class="platform-label">제휴 플랫폼 & 연동 채널</div>
-      <div class="platform-list">
-        <span class="platform-tag">머스트잇</span><span class="platform-tag">발란</span><span class="platform-tag">트렌비</span><span class="platform-tag">필웨이</span><span class="platform-tag">리본즈</span><span class="platform-tag">스마트스토어</span><span class="platform-tag">쿠팡</span><span class="platform-tag">11번가</span><span class="platform-tag">SSG.COM</span><span class="platform-tag">롯데ON</span><span class="platform-tag">G마켓</span><span class="platform-tag">옥션</span><span class="platform-tag">인터파크</span><span class="platform-tag">카페24</span><span class="platform-tag">쇼피파이</span><span class="platform-tag">포이즌</span><span class="platform-tag">CJ ONSTYLE</span><span class="platform-tag">LF MALL</span><span class="platform-tag">GS SHOP</span><span class="platform-tag">아임웹</span>
       </div>
     </div>
   </div>
@@ -979,20 +1075,24 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
         <tbody>
           <tr class="core">
             <td><span class="p-name">이탈리아 부티크 파트너 멤버십</span><span class="p-note">물류대행 · 정품보증 · 리얼패킹 · 보증서 포함</span></td>
-            <td>800,000원</td><td>600,000원</td><td>450,000원</td>
-            <td><span class="p-hi">300,000원</span><span class="p-note">연 600만원 절약</span></td>
+            <td><span class="p-total">80<em>만원</em></span></td>
+            <td><span class="p-total">180<em>만원</em></span><span class="p-monthly">월 60만원</span></td>
+            <td><span class="p-total">270<em>만원</em></span><span class="p-monthly">월 45만원</span></td>
+            <td><span class="p-total p-hi">360<em>만원</em></span><span class="p-monthly">월 30만원</span><span class="p-note">12개월 약정 최저가</span></td>
           </tr>
         </tbody>
       </table>
     </div>
     <div id="tab-jarvis" class="pcontent">
       <table class="ptable">
-        <thead><tr><th>서비스</th><th>세팅비</th><th>1개월</th><th>3개월</th><th>6개월</th><th>12개월</th></tr></thead>
+        <thead><tr><th>서비스</th><th>1개월</th><th>3개월</th><th>6개월</th><th>12개월</th></tr></thead>
         <tbody>
           <tr>
-            <td><span class="p-name">JP자비스</span><span class="p-note">스토어 자동화 · 33개 마켓 연동</span></td>
-            <td>300,000원</td><td>600,000원</td><td>500,000원</td><td>400,000원</td>
-            <td><span class="p-hi">300,000원</span></td>
+            <td><span class="p-name">JP자비스</span><span class="p-note">스토어 자동화 · 33개 마켓 연동 · 세팅비 30만원 별도</span></td>
+            <td><span class="p-total">60<em>만원</em></span></td>
+            <td><span class="p-total">150<em>만원</em></span><span class="p-monthly">월 50만원</span></td>
+            <td><span class="p-total">240<em>만원</em></span><span class="p-monthly">월 40만원</span></td>
+            <td><span class="p-total p-hi">360<em>만원</em></span><span class="p-monthly">월 30만원</span></td>
           </tr>
         </tbody>
       </table>
@@ -1004,16 +1104,22 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
         <tbody>
           <tr>
             <td><span class="p-name">소싱 데이터</span><span class="p-note">크림 판매 인사이트 · 주 1~2회 제공</span></td>
-            <td>300,000원</td><td>250,000원</td><td>200,000원</td>
-            <td><span class="p-hi">150,000원</span><span class="p-note">연 180만원 절약</span></td>
+            <td><span class="p-total">30<em>만원</em></span></td>
+            <td><span class="p-total">75<em>만원</em></span><span class="p-monthly">월 25만원</span></td>
+            <td><span class="p-total">120<em>만원</em></span><span class="p-monthly">월 20만원</span></td>
+            <td><span class="p-total p-hi">180<em>만원</em></span><span class="p-monthly">월 15만원</span><span class="p-note">12개월 약정 최저가</span></td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="onetime-grid">
-      <div class="ot-card"><div class="ot-name">자사몰 제작</div><div class="ot-price">2,000,000원</div><div class="ot-desc">B2C 자사몰 구축 · JP자비스 연동 · 1회성</div></div>
-      <div class="ot-card"><div class="ot-name">상세페이지 제작</div><div class="ot-price">300,000원</div><div class="ot-desc">건당 · 채널별 최적화</div></div>
-      <div class="ot-card" style="background:#FFFBF2;border-color:rgba(181,138,72,0.3);"><div class="ot-name" style="color:var(--gold);">번들 할인</div><div class="ot-price" style="font-size:22px;">상담 후 협의</div><div class="ot-desc">멤버십 + JP자비스 + 소싱데이터 조합 시 추가 할인 제공</div></div>
+
+    <div class="addon-section">
+      <div class="addon-label">부가 서비스</div>
+      <div class="onetime-grid">
+        <div class="ot-card"><div class="ot-name">자사몰 제작</div><div class="ot-price">2,000,000원</div><div class="ot-desc">B2C 자사몰 구축 · JP자비스 연동 · 1회성</div></div>
+        <div class="ot-card"><div class="ot-name">상세페이지 제작</div><div class="ot-price">300,000원</div><div class="ot-desc">건당 · 채널별 최적화</div></div>
+        <div class="ot-card" style="background:#FFFBF2;border-color:rgba(181,138,72,0.3);"><div class="ot-name" style="color:var(--gold);">번들 할인</div><div class="ot-price" style="font-size:22px;">상담 후 협의</div><div class="ot-desc">멤버십 + JP자비스 + 소싱데이터 조합 시 추가 할인 제공</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1027,9 +1133,9 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
     <div class="contact-wrap" style="margin-top:64px;">
       <div class="contact-info">
         <p style="font-size:14.5px;color:var(--gray);line-height:1.9;word-break:keep-all;">현재 운영 중인 스토어 현황을 알려주시면<br>가장 적합한 공급 구조와 서비스를 제안해드립니다.</p>
-        <div class="ci-item"><span class="ci-label">KAKAOTALK</span><span class="ci-value">@JPRIMO</span><span class="ci-sub">카카오 채널 채팅 문의</span></div>
-        <div class="ci-item"><span class="ci-label">EMAIL</span><span class="ci-value">b2b@jprimo.com</span><span class="ci-sub">24시간 이내 회신</span></div>
-        <div class="ci-item"><span class="ci-label">ADDRESS</span><span class="ci-value" style="font-size:15px;">서울 강남구 테헤란로 2길 27, 908호</span><span class="ci-sub">주식회사 제이프리모인터내셔널</span></div>
+        <a href="http://pf.kakao.com/_Qxlxaxdxj" target="_blank" rel="noopener" class="ci-item ci-link"><span class="ci-label">KAKAOTALK</span><span class="ci-value">@JPRIMO</span><span class="ci-sub">카카오 채널 채팅 문의 →</span></a>
+        <div class="ci-item"><span class="ci-label">EMAIL</span><span class="ci-value">info@jprimo.com</span><span class="ci-sub">24시간 이내 회신</span></div>
+        <div class="ci-item"><span class="ci-label">ADDRESS</span><span class="ci-value" style="font-size:15px;">서울 강남구 테헤란로 2길 27, 9층</span><span class="ci-sub">주식회사 제이프리모인터내셔널</span></div>
       </div>
       <form class="contact-form" onsubmit="handleSubmit(event)">
         <div class="form-row">
@@ -1058,12 +1164,17 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
         <p class="f-desc">이탈리아 32개+ 부티크 직계약 명품 B2B 공급 파트너.<br>중간 마진 없이, 국내 최저 공급가로.</p>
       </div>
       <div><div class="f-col-title">서비스</div><ul class="f-links"><li><a href="#why">공급 멤버십</a></li><li><a href="#jarvis">JP자비스</a></li><li><a href="#sourcing">소싱 데이터</a></li><li><a href="#pricing">요금제</a></li></ul></div>
-      <div><div class="f-col-title">회사</div><ul class="f-links"><li><a href="#">회사 소개</a></li><li><a href="#">비아엘리떼</a></li><li><a href="#">명품창업사관학교</a></li></ul></div>
-      <div><div class="f-col-title">문의</div><ul class="f-links"><li><a href="#">카카오톡 @JPRIMO</a></li><li><a href="#">b2b@jprimo.com</a></li><li><a href="#">viaelite.kr</a></li></ul></div>
+      <div><div class="f-col-title">회사</div><ul class="f-links"><li><a href="#hero">회사 소개</a></li><li><a href="#brands">브랜드 포트폴리오</a></li><li><a href="#contact">파트너 상담</a></li></ul></div>
+      <div><div class="f-col-title">문의</div><ul class="f-links"><li><a href="http://pf.kakao.com/_Qxlxaxdxj" target="_blank" rel="noopener">카카오톡 채널 @JPRIMO</a></li><li><a href="mailto:info@jprimo.com">info@jprimo.com</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <div class="f-copy">© 2025 JPRIMO International. All rights reserved.</div>
-      <div class="f-biz">주식회사 제이프리모인터내셔널 | 대표: 지준우 | 사업자등록번호: 435-87-02485<br>서울 강남구 테헤란로 2길 27, 908호</div>
+      <div class="f-biz">
+        <div class="f-biz-name">주식회사 제이프리모인터내셔널</div>
+        <div class="f-biz-row">대표 <span>지준우</span></div>
+        <div class="f-biz-row">사업자등록번호 <span>435-87-02485</span></div>
+        <div class="f-biz-row">주소 <span>서울 강남구 테헤란로 2길 27, 9층</span></div>
+        <div class="f-copy">© 2025 JPRIMO International. All rights reserved.</div>
+      </div>
     </div>
   </div>
 </footer>
@@ -1073,13 +1184,12 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
 function setDur(dur, el) {
   document.querySelectorAll('.dur-btn').forEach(b => b.classList.remove('active'));
   el.classList.add('active');
+  // 총비용(만원) + 월 환산(만원)
   const prices = {
-    supply: {1:'800,000원', 3:'600,000원', 6:'450,000원', 12:'300,000원 ★'},
-    jarvis: {1:'600,000원', 3:'500,000원', 6:'400,000원', 12:'300,000원 ★'},
-    sourcing:{1:'300,000원', 3:'250,000원', 6:'200,000원', 12:'150,000원 ★'}
+    supply:   {1:{t:'80', m:''},  3:{t:'180', m:'월 60만원'}, 6:{t:'270', m:'월 45만원'}, 12:{t:'360', m:'월 30만원'}},
+    jarvis:   {1:{t:'60', m:''},  3:{t:'150', m:'월 50만원'}, 6:{t:'240', m:'월 40만원'}, 12:{t:'360', m:'월 30만원'}},
+    sourcing: {1:{t:'30', m:''},  3:{t:'75',  m:'월 25만원'}, 6:{t:'120', m:'월 20만원'}, 12:{t:'180', m:'월 15만원'}}
   };
-  const notes = {12:'12개월 약정 최저가'};
-  // update visible tab prices on mobile
   document.querySelectorAll('.ptable').forEach(t => {
     const id = t.closest('.pcontent').id.replace('tab-','');
     const p = prices[id];
@@ -1088,13 +1198,13 @@ function setDur(dur, el) {
     rows.forEach(row => {
       const tds = row.querySelectorAll('td');
       if(!tds.length) return;
-      // remove old mobile price display
       const old = row.querySelector('.mobile-price-display');
       if(old) old.remove();
+      const cur = p[dur];
+      if(!cur) return;
       const div = document.createElement('div');
       div.className = 'mobile-price-display';
-      div.style.cssText = 'font-size:20px;font-weight:900;color:var(--gold,#B58A48);margin-top:8px;';
-      div.textContent = p[dur] || '';
+      div.innerHTML = `<span class="mpd-total">${cur.t}<em>만원</em></span>${cur.m?`<span class="mpd-monthly">${cur.m}</span>`:''}${dur==='12'?'<span class="mpd-note">12개월 약정 최저가</span>':''}`;
       if(window.innerWidth <= 640) tds[0].appendChild(div);
     });
   });
@@ -1256,6 +1366,77 @@ document.querySelectorAll('.stat-item').forEach(el => statIo.observe(el));
 setTimeout(()=>{
   document.querySelector('.hero-tag') && (document.querySelector('.hero-tag').style.opacity='1');
 },100);
+
+// ── 요금 구조: 모바일에서 초기 가격 표시 + 리사이즈 대응 ──
+function refreshPricingMobile(){
+  const activeBtn = document.querySelector('.dur-btn.active');
+  if(!activeBtn) return;
+  const dur = activeBtn.textContent.replace(/[^0-9]/g,'');
+  if(dur) setDur(dur, activeBtn);
+}
+window.addEventListener('DOMContentLoaded', refreshPricingMobile);
+window.addEventListener('resize', refreshPricingMobile);
+
+// ── 소싱 데이터 슬롯머신 (행 단위, 2초 간격, 위·아래 페이드) ──
+(function(){
+  const data = [
+    // 마진율 18~22% 범위로 조정 (instant ≈ supply + margin, last = 시장 평균가)
+    {name:'구찌 26ss 숄더백',         supply:'364,000',  last:'449,000',   margin:'73,000',  when:'5시간 전', instant:'437,000원'},
+    {name:'프라다 호보 사피아노',     supply:'612,000',  last:'758,000',   margin:'128,000', when:'12분 전',  instant:'740,000원'},
+    {name:'생로랑 카드케이스',         supply:'238,000',  last:'298,000',   margin:'52,000',  when:'1시간 전', instant:'290,000원'},
+    {name:'발렌시아가 어글리 스니커즈', supply:'498,000',  last:'615,000',   margin:'99,000',  when:'37분 전',  instant:'597,000원'},
+    {name:'몽클레르 패딩 머프',       supply:'1,182,000',last:'1,440,000', margin:'225,000', when:'2시간 전', instant:'1,407,000원'},
+    {name:'보테가 카세트 클러치',     supply:'1,860,000',last:'2,290,000', margin:'390,000', when:'4시간 전', instant:'2,250,000원'},
+    {name:'미우미우 마테라쎄 백',     supply:'1,320,000',last:'1,590,000', margin:'238,000', when:'40분 전',  instant:'1,558,000원'},
+    {name:'에르메스 H 벨트',           supply:'820,000',  last:'1,025,000', margin:'180,000', when:'1시간 전', instant:'1,000,000원'}
+  ];
+  const wrap = document.querySelector('.sd-rows-mask');
+  if(!wrap) return;
+  const track = wrap.querySelector('.sd-rows-track');
+  const ROW_H = 60;
+  const N = data.length;
+  // 위/아래 peek + seamless loop을 위해 데이터 3배 렌더
+  const tripled = data.concat(data, data);
+  tripled.forEach(d=>{
+    const row = document.createElement('div');
+    row.className = 'sd-row';
+    row.innerHTML = `
+      <div class="sd-cell">${d.name}</div>
+      <div class="sd-cell">${d.supply}</div>
+      <div class="sd-cell">${d.last}</div>
+      <div class="sd-cell sd-cell-hi">${d.margin}</div>
+      <div class="sd-cell">${d.when}</div>
+      <div class="sd-cell">${d.instant}</div>`;
+    track.appendChild(row);
+  });
+  let idx = N; // 가운데 복사본의 첫 행에서 시작
+  function show(i, animate){
+    track.style.transition = animate ? 'transform .7s cubic-bezier(0.55,0.05,0.35,1)' : 'none';
+    track.style.transform = `translateY(${(1-i)*ROW_H}px)`;
+  }
+  show(idx, false);
+  let started = false;
+  function tick(){
+    idx++;
+    show(idx, true);
+    if(idx >= N*2){
+      // 트랜지션 끝나면 가운데 복사본으로 점프 (시각적으로 동일하므로 끊김 없음)
+      setTimeout(()=>{
+        idx = N;
+        show(idx, false);
+      }, 720);
+    }
+  }
+  const sdIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting && !started){
+        started = true;
+        setInterval(tick, 2000);
+      }
+    });
+  }, {threshold:0.3});
+  sdIo.observe(wrap);
+})();
 
 </script>
 </body>
