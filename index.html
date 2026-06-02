@@ -1352,13 +1352,12 @@ function handleSubmit(e) {
     btn.style.background = '#1A5C3A';
     btn.style.color = '#fff';
     e.target.reset();
-    // ── Google Ads 전환: 폼 제출 완료 ──
+    // ── Google Ads 전환: 리드 양식 제출_제이프리모 ──
     if (typeof gtag === 'function') {
       gtag('event', 'conversion', {
-        'send_to': 'AW-17738269011/FORM_SUBMIT_LABEL', // ← Ads에서 전환 라벨 생성 후 교체
-        'event_category': 'lead',
-        'event_label': data.service || 'general',
-        'value': 1
+          'send_to': 'AW-17738269011/24TICIqO17ccENOCoopC',
+          'value': 1.0,
+          'currency': 'KRW'
       });
     }
     window.dataLayer = window.dataLayer || [];
