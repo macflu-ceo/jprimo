@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+<!-- Google tag (gtag.js) — Google Ads AW-17738269011 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17738269011"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-17738269011');
+</script>
+<!-- /Google tag -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JPRIMO International — 이탈리아 명품 B2B 공급 파트너</title>
@@ -1342,6 +1352,17 @@ function handleSubmit(e) {
     btn.style.background = '#1A5C3A';
     btn.style.color = '#fff';
     e.target.reset();
+    // ── Google Ads 전환: 폼 제출 완료 ──
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17738269011/FORM_SUBMIT_LABEL', // ← Ads에서 전환 라벨 생성 후 교체
+        'event_category': 'lead',
+        'event_label': data.service || 'general',
+        'value': 1
+      });
+    }
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({event: 'jprimo_form_submit', service: data.service || ''});
   })
   .catch(() => {
     btn.textContent = '오류 발생 — 직접 연락 부탁드립니다.';
@@ -1350,6 +1371,29 @@ function handleSubmit(e) {
     btn.disabled = false;
   });
 }
+
+// ── Google Ads 전환: 카카오톡·이메일 클릭 추적 ──
+function trackJprimoClick(kind, label){
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-17738269011/' + (kind==='kakao' ? 'KAKAO_CLICK_LABEL' : 'EMAIL_CLICK_LABEL'),
+      'event_category': 'engagement',
+      'event_label': label || ''
+    });
+  }
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event: 'jprimo_' + kind + '_click', label: label || ''});
+}
+document.addEventListener('DOMContentLoaded', function(){
+  // 카카오톡 채널 링크
+  document.querySelectorAll('a[href*="pf.kakao.com/_Qxlxaxdxj"]').forEach(function(a){
+    a.addEventListener('click', function(){ trackJprimoClick('kakao', a.textContent.trim()); });
+  });
+  // mailto:info@jprimo.com
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+    a.addEventListener('click', function(){ trackJprimoClick('email', a.getAttribute('href').replace('mailto:','')); });
+  });
+});
 window.addEventListener('scroll', () => {
   const nav = document.querySelector('nav');
   nav.style.borderBottomColor = window.scrollY > 80 ? 'rgba(181,138,72,0.2)' : 'rgba(181,138,72,0.12)';
