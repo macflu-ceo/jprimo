@@ -1,0 +1,19 @@
+{
+  "name": "명품창업사관학교",
+  "short_name": "명창사",
+  "icons": [
+    {
+      "src": "/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0A372A",
+  "background_color": "#0A372A",
+  "display": "standalone"
+}
