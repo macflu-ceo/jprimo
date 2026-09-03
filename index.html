@@ -318,15 +318,24 @@ nav{
 .brink-addon-name{font-size:22px;font-weight:900;color:var(--gold);letter-spacing:-0.01em;}
 .brink-addon-tag{font-size:10px;font-weight:700;letter-spacing:0.16em;color:var(--gray);}
 .brink-addon-desc{font-size:12.5px;color:var(--gray);line-height:1.7;margin-bottom:24px;}
-.brink-price-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:20px;}
-.bp-cell{border:1px solid var(--cream2);background:var(--white);padding:18px 16px;text-align:center;}
-.bp-cell.hi{border-color:rgba(181,138,72,0.45);}
-.bp-dur{font-size:11px;color:var(--gray);letter-spacing:0.08em;margin-bottom:8px;}
-.bp-amt{font-size:19px;font-weight:900;color:var(--dark);line-height:1.1;}
-.bp-amt em{font-style:normal;font-size:12px;font-weight:600;color:var(--gray);margin-left:1px;}
-.bp-cell.hi .bp-amt{color:var(--gold);}
-.bp-cell.hi .bp-amt em{color:var(--gold);}
-.bp-mo{font-size:11px;color:var(--gray);margin-top:6px;}
+.btable{width:100%;border-collapse:collapse;background:var(--white);}
+.btable th{text-align:left;padding:13px 18px;font-size:10.5px;font-weight:700;color:var(--gray);letter-spacing:0.1em;border-bottom:1px solid var(--cream2);}
+.btable th:not(:first-child){text-align:right;}
+.btable td{padding:18px;border-bottom:1px solid var(--cream2);vertical-align:middle;}
+.btable td:not(:first-child){text-align:right;}
+.btable tbody tr:last-child td{border-bottom:none;}
+.btable tr.bt-core td{background:#FFFBF2;}
+.bt-name{font-size:13.5px;font-weight:700;color:var(--dark);display:block;}
+.bt-sub{font-size:11.5px;color:var(--gray);display:block;margin-top:4px;font-weight:400;line-height:1.5;}
+.bt-opt{font-size:9.5px;font-weight:700;color:var(--gold);background:rgba(181,138,72,0.13);padding:2px 7px;margin-left:6px;letter-spacing:0.04em;vertical-align:middle;}
+.bt-amt{font-size:17px;font-weight:900;color:var(--dark);line-height:1.1;display:block;white-space:nowrap;}
+.bt-amt em{font-style:normal;font-size:11.5px;font-weight:600;color:var(--gray);margin-left:1px;}
+.bt-core .bt-amt{color:var(--gold);}
+.bt-core .bt-amt em{color:var(--gold);}
+.bt-terms{margin-top:18px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-size:12px;color:var(--gray);}
+.bt-terms-l{font-size:10px;font-weight:700;letter-spacing:0.16em;color:var(--gold);}
+.bt-term strong{font-weight:800;color:var(--dark);margin-left:4px;}
+.bt-term-hi strong{color:var(--gold);}
 
 /* CONTACT */
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;}
@@ -606,8 +615,17 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
   .chan-card{padding:26px 22px;}
   .pkg-banner{padding:22px 20px;}
   .pkg-save{text-align:left;}
-  .brink-addon{padding:26px 20px;}
-  .brink-price-row{grid-template-columns:repeat(2,1fr);}
+  .brink-addon{padding:26px 18px;}
+  .btable th:first-child,.btable td:first-child{padding-left:12px;}
+  .btable th,.btable td{padding:14px 10px;}
+  .btable th{font-size:9.5px;letter-spacing:0.04em;}
+  .btable th:nth-child(2),.btable td:nth-child(2),.btable th:nth-child(3),.btable td:nth-child(3){width:74px;}
+  .bt-name{font-size:12.5px;}
+  .bt-sub{font-size:11px;}
+  .bt-amt{font-size:15px;}
+  .bt-amt em{font-size:10.5px;}
+  .bt-sub-term{display:none;}
+  .bt-terms{gap:6px 12px;font-size:11.5px;}
   .guarantee-wrap,.jarvis-wrap,.sourcing-wrap,.contact-wrap{grid-template-columns:1fr;}
   .guarantee-img{min-height:220px;}
   .guarantee-content{padding:36px 24px;}
@@ -1173,8 +1191,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
     </div>
     <div class="pricing-tabs">
       <div class="ptab active" onclick="showTab('supply',this)">공급 권한</div>
-      <div class="ptab" onclick="showTab('pkg',this)">패키지 · 추천</div>
       <div class="ptab" onclick="showTab('sourcing',this)">소싱 데이터</div>
+      <div class="ptab" onclick="showTab('pkg',this)">패키지 · 추천</div>
     </div>
     <div id="tab-supply" class="pcontent active">
       <table class="ptable">
@@ -1211,6 +1229,20 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
           <div class="pkg-incl-b">전 상품 정품 보증서가 발급되며, 정품 이슈 발생 시 JPRIMO가 책임집니다.</div>
         </div>
       </div>
+    </div>
+    <div id="tab-sourcing" class="pcontent">
+      <table class="ptable">
+        <thead><tr><th>서비스</th><th>1개월</th><th>3개월</th><th>6개월</th><th>12개월</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="p-name">소싱 데이터</span><span class="p-note">크림 판매 인사이트 · 주 1~2회 제공</span></td>
+            <td><span class="p-total">30<em>만원</em></span></td>
+            <td><span class="p-total">75<em>만원</em></span><span class="p-monthly">월 25만원</span></td>
+            <td><span class="p-total">120<em>만원</em></span><span class="p-monthly">월 20만원</span></td>
+            <td><span class="p-total p-hi">180<em>만원</em></span><span class="p-monthly">월 15만원</span><span class="p-note">12개월 약정 최저가</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
     <div id="tab-pkg" class="pcontent">
       <div class="pkg-banner">
@@ -1249,20 +1281,6 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
       </div>
       <div class="price-note-row" style="border-top:1px solid var(--cream2);color:var(--gray);">두 상품은 각각 단독 이용도 가능합니다. 패키지 가격은 단독 합산가 대비 할인된 금액입니다.</div>
     </div>
-    <div id="tab-sourcing" class="pcontent">
-      <table class="ptable">
-        <thead><tr><th>서비스</th><th>1개월</th><th>3개월</th><th>6개월</th><th>12개월</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><span class="p-name">소싱 데이터</span><span class="p-note">크림 판매 인사이트 · 주 1~2회 제공</span></td>
-            <td><span class="p-total">30<em>만원</em></span></td>
-            <td><span class="p-total">75<em>만원</em></span><span class="p-monthly">월 25만원</span></td>
-            <td><span class="p-total">120<em>만원</em></span><span class="p-monthly">월 20만원</span></td>
-            <td><span class="p-total p-hi">180<em>만원</em></span><span class="p-monthly">월 15만원</span><span class="p-note">12개월 약정 최저가</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
 
     <div class="addon-section">
       <div class="addon-label">부가 서비스</div>
@@ -1271,24 +1289,35 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
           <span class="brink-addon-name">Brink</span>
           <span class="brink-addon-tag">부티크 연동 프로그램</span>
         </div>
-        <div class="brink-addon-desc">제이프리모가 직접 만든 자사몰 연동 솔루션. 부티크 재고·가격·상세페이지가 자동 반영됩니다. 세팅비 30만원 별도.</div>
-        <div class="brink-price-row">
-          <div class="bp-cell"><div class="bp-dur">1개월</div><div class="bp-amt">60<em>만원</em></div></div>
-          <div class="bp-cell"><div class="bp-dur">3개월</div><div class="bp-amt">150<em>만원</em></div><div class="bp-mo">월 50만원</div></div>
-          <div class="bp-cell"><div class="bp-dur">6개월</div><div class="bp-amt">240<em>만원</em></div><div class="bp-mo">월 40만원</div></div>
-          <div class="bp-cell hi"><div class="bp-dur">12개월</div><div class="bp-amt">360<em>만원</em></div><div class="bp-mo">월 30만원</div></div>
-        </div>
-        <div class="ja-grid">
-          <div class="ja-tier ja-tier-hi">
-            <div class="ja-tier-name">자사몰 (기본)</div>
-            <div class="ja-tier-line">세팅 <strong>50만원</strong> <span class="ja-sep">·</span> 월 운영비 <strong>30만원</strong></div>
-            <div class="ja-tier-sub">카페24 · 아임웹 · 고도몰</div>
-          </div>
-          <div class="ja-tier">
-            <div class="ja-tier-name">명품 특화 오픈마켓 (선택)</div>
-            <div class="ja-tier-line">세팅 <strong>30만원</strong> <span class="ja-sep">·</span> 월 운영비 <strong>15만원</strong></div>
-            <div class="ja-tier-sub">스마트스토어 · 11번가 · 머스트잇</div>
-          </div>
+        <div class="brink-addon-desc">제이프리모가 직접 만든 자사몰 연동 솔루션. 부티크 재고·가격·상세페이지가 자동 반영됩니다.</div>
+        <table class="btable">
+          <thead>
+            <tr><th>항목</th><th>세팅비 (1회)</th><th>월 이용료</th></tr>
+          </thead>
+          <tbody>
+            <tr class="bt-core">
+              <td><span class="bt-name">Brink 기본 이용료</span><span class="bt-sub">프로그램 이용 · 부티크 데이터 연동</span></td>
+              <td><span class="bt-amt">30<em>만원</em></span></td>
+              <td><span class="bt-amt">60<em>만원</em></span><span class="bt-sub bt-sub-term">12개월 약정 시 월 30만원</span></td>
+            </tr>
+            <tr>
+              <td><span class="bt-name">자사몰 연동</span><span class="bt-sub">카페24 · 아임웹 · 고도몰</span></td>
+              <td><span class="bt-amt">50<em>만원</em></span></td>
+              <td><span class="bt-amt">30<em>만원</em></span></td>
+            </tr>
+            <tr>
+              <td><span class="bt-name">명품 오픈마켓 연동 <span class="bt-opt">선택</span></span><span class="bt-sub">스마트스토어 · 11번가 · 머스트잇</span></td>
+              <td><span class="bt-amt">30<em>만원</em></span></td>
+              <td><span class="bt-amt">15<em>만원</em></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="bt-terms">
+          <span class="bt-terms-l">기본 이용료 약정별</span>
+          <span class="bt-term">1개월 <strong>월 60만원</strong></span>
+          <span class="bt-term">3개월 <strong>월 50만원</strong></span>
+          <span class="bt-term">6개월 <strong>월 40만원</strong></span>
+          <span class="bt-term bt-term-hi">12개월 <strong>월 30만원</strong></span>
         </div>
       </div>
       <div class="onetime-grid">
