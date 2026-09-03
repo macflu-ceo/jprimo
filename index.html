@@ -160,7 +160,7 @@ nav{
 .g-item-title{font-size:15px;font-weight:700;margin-bottom:8px;}
 .g-item-body{font-size:13px;color:var(--gray);line-height:1.8;word-break:keep-all;}
 
-/* JARVIS */
+/* BRINK */
 .jarvis-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch;}
 .jarvis-feats{display:flex;flex-direction:column;gap:0;}
 .jarvis-feats .j-feat{flex:1;display:flex;flex-direction:column;justify-content:center;}
@@ -169,7 +169,7 @@ nav{
 .j-feat-n{font-size:10px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:14px;}
 .j-feat-title{font-size:16px;font-weight:700;color:var(--white);margin-bottom:10px;}
 .j-feat-body{font-size:13px;color:var(--gray);line-height:1.8;word-break:keep-all;}
-/* JP자비스 다이어그램 — 박스 없음, 좌측 기능과 정확히 정렬 */
+/* Brink 다이어그램 — 박스 없음, 좌측 기능과 정확히 정렬 */
 .jarvis-diagram{background:transparent;border:none;padding:0;display:flex;flex-direction:column;align-items:center;gap:8px;}
 .jd-node{background:var(--dark2);border:1px solid rgba(255,255,255,0.08);padding:14px 22px;text-align:center;width:100%;max-width:340px;}
 .jd-fields-node{padding:12px 16px 14px;}
@@ -241,6 +241,16 @@ nav{
 .platform-list{display:flex;flex-wrap:wrap;gap:10px;}
 .platform-tag{border:1px solid rgba(181,138,72,0.22);color:rgba(255,255,255,0.45);font-size:12.5px;padding:9px 18px;letter-spacing:0.03em;transition:all .2s;}
 .platform-tag:hover{border-color:rgba(181,138,72,0.5);color:rgba(255,255,255,0.7);}
+/* 연동 채널 */
+.chan-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.chan-card{border:1px solid rgba(181,138,72,0.22);padding:34px 32px;transition:border-color .2s;}
+.chan-card:hover{border-color:rgba(181,138,72,0.5);}
+.chan-card-badge{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:0.18em;padding:5px 11px;background:rgba(181,138,72,0.14);color:var(--gold-l);margin-bottom:18px;}
+.chan-card-title{font-size:17px;font-weight:800;color:var(--white);margin-bottom:10px;letter-spacing:-0.01em;}
+.chan-card-body{font-size:13px;color:var(--gray);line-height:1.75;margin-bottom:20px;}
+.chan-tags{display:flex;flex-wrap:wrap;gap:8px;}
+.chan-tags .platform-tag{font-size:12px;padding:7px 15px;}
+.chan-note{margin-top:22px;font-size:12px;color:var(--gold-l);letter-spacing:0.02em;line-height:1.7;}
 
 /* BRAND */
 #brands{background:var(--cream);padding:80px 6%;}
@@ -277,6 +287,23 @@ nav{
 .ja-sep{color:var(--cream2);margin:0 6px;}
 .ja-tier-sub{font-size:12px;color:var(--gray);letter-spacing:0.01em;}
 .ja-tier-hi .ja-tier-name{color:var(--gold);}
+/* 패키지 */
+.pkg-banner{margin-bottom:2px;background:var(--dark);padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.pkg-banner-l{font-size:11px;font-weight:700;letter-spacing:0.2em;color:var(--gold-l);margin-bottom:8px;}
+.pkg-banner-t{font-size:17px;font-weight:800;color:var(--white);letter-spacing:-0.01em;line-height:1.5;}
+.pkg-banner-t em{font-style:normal;color:var(--gold-l);}
+.pkg-save{text-align:right;flex-shrink:0;}
+.pkg-save-l{font-size:10.5px;color:var(--gray);letter-spacing:0.1em;margin-bottom:4px;}
+.pkg-save-n{font-size:26px;font-weight:900;color:var(--gold-l);line-height:1;}
+.pkg-save-n em{font-style:normal;font-size:14px;margin-left:2px;}
+.ptable tr.pkg td{background:#FFF8EC;}
+.ptable .p-was{display:block;font-size:11.5px;color:var(--gray);text-decoration:line-through;margin-bottom:4px;font-weight:500;}
+.ptable .p-save{display:inline-block;font-size:10.5px;font-weight:700;color:var(--gold);background:rgba(181,138,72,0.13);padding:3px 8px;margin-top:7px;letter-spacing:0.03em;}
+.pkg-incl{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.pkg-incl-card{border:1px solid var(--cream2);padding:26px 28px;}
+.pkg-incl-n{font-size:10px;font-weight:700;letter-spacing:0.18em;color:var(--gold);margin-bottom:12px;}
+.pkg-incl-t{font-size:14.5px;font-weight:700;margin-bottom:8px;}
+.pkg-incl-b{font-size:12.5px;color:var(--gray);line-height:1.7;}
 .addon-section{margin-top:72px;padding-top:48px;border-top:1px solid var(--cream2);}
 .addon-label{font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.24em;margin-bottom:24px;}
 .onetime-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:0;}
@@ -285,6 +312,21 @@ nav{
 .ot-name{font-size:12px;color:var(--gray);margin-bottom:10px;letter-spacing:0.06em;}
 .ot-price{font-size:28px;font-weight:900;}
 .ot-desc{font-size:12.5px;color:var(--gray);margin-top:10px;line-height:1.6;}
+/* 부가서비스 — Brink */
+.brink-addon{border:1px solid rgba(181,138,72,0.35);background:#FFFBF2;padding:34px 32px;margin-bottom:2px;}
+.brink-addon-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px;}
+.brink-addon-name{font-size:22px;font-weight:900;color:var(--gold);letter-spacing:-0.01em;}
+.brink-addon-tag{font-size:10px;font-weight:700;letter-spacing:0.16em;color:var(--gray);}
+.brink-addon-desc{font-size:12.5px;color:var(--gray);line-height:1.7;margin-bottom:24px;}
+.brink-price-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:20px;}
+.bp-cell{border:1px solid var(--cream2);background:var(--white);padding:18px 16px;text-align:center;}
+.bp-cell.hi{border-color:rgba(181,138,72,0.45);}
+.bp-dur{font-size:11px;color:var(--gray);letter-spacing:0.08em;margin-bottom:8px;}
+.bp-amt{font-size:19px;font-weight:900;color:var(--dark);line-height:1.1;}
+.bp-amt em{font-style:normal;font-size:12px;font-weight:600;color:var(--gray);margin-left:1px;}
+.bp-cell.hi .bp-amt{color:var(--gold);}
+.bp-cell.hi .bp-amt em{color:var(--gold);}
+.bp-mo{font-size:11px;color:var(--gray);margin-top:6px;}
 
 /* CONTACT */
 .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;}
@@ -560,7 +602,12 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
   .why-h{font-size:clamp(20px,5.5vw,28px);}
   .why-sub{font-size:13px;margin-bottom:28px;}
   .why-card{opacity:1;padding:32px 24px;}
-  .why-grid,.ch-grid{grid-template-columns:1fr;}
+  .why-grid,.ch-grid,.chan-grid,.pkg-incl{grid-template-columns:1fr;}
+  .chan-card{padding:26px 22px;}
+  .pkg-banner{padding:22px 20px;}
+  .pkg-save{text-align:left;}
+  .brink-addon{padding:26px 20px;}
+  .brink-price-row{grid-template-columns:repeat(2,1fr);}
   .guarantee-wrap,.jarvis-wrap,.sourcing-wrap,.contact-wrap{grid-template-columns:1fr;}
   .guarantee-img{min-height:220px;}
   .guarantee-content{padding:36px 24px;}
@@ -740,7 +787,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
   <a href="#" class="nav-logo">J<em>P</em>RIMO</a>
   <ul class="nav-links">
     <li><a href="#why">공급 강점</a></li>
-    <li><a href="#jarvis">JP자비스</a></li>
+    <li><a href="#brink">Brink</a></li>
     <li><a href="#sourcing">소싱 데이터</a></li>
     <li><a href="#pricing">요금제</a></li>
     <li><a href="#contact">문의</a></li>
@@ -752,7 +799,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
 </nav>
 <div class="mobile-nav" id="mobile-nav">
   <a href="#why" onclick="toggleMenu()">공급 강점</a>
-  <a href="#jarvis" onclick="toggleMenu()">JP자비스</a>
+  <a href="#brink" onclick="toggleMenu()">Brink</a>
   <a href="#sourcing" onclick="toggleMenu()">소싱 데이터</a>
   <a href="#pricing" onclick="toggleMenu()">요금제</a>
   <a href="#contact" onclick="toggleMenu()">파트너 상담 신청</a>
@@ -895,7 +942,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
       <div class="flow-step fi-up d1"><div class="flow-n">01</div><div class="flow-title">이탈리아 부티크</div><div class="flow-body">32개+ 부티크 직계약<br>이탈리아 지사 상주<br>실시간 재고 연동</div><span class="flow-tag">ITALY</span></div>
       <div class="flow-step fi-up d2"><div class="flow-n">02</div><div class="flow-title">국내 검수 입고</div><div class="flow-body">현지 픽업 · 통관 대행<br>해외 입고 상품 검수<br>디지털 보증서 발급</div><span class="flow-tag">INSPECTION</span></div>
       <div class="flow-step fi-up d3"><div class="flow-n">03</div><div class="flow-title">JPRIMO 3PL</div><div class="flow-body">국내 입고 · 재고 보관<br>주문별 검수 · 리얼패킹 영상<br>고객 출고 · CS</div><span class="flow-tag">LOGISTICS</span></div>
-      <div class="flow-step fi-up d4"><div class="flow-n">04</div><div class="flow-title">셀러 스토어</div><div class="flow-body">소량도 최저 도매가<br>JP자비스 자동 연동<br>다양한 판로 지원</div><span class="flow-tag">SALES</span></div>
+      <div class="flow-step fi-up d4"><div class="flow-n">04</div><div class="flow-title">셀러 스토어</div><div class="flow-body">소량도 최저 도매가<br>Brink 자동 연동<br>다양한 판로 지원</div><span class="flow-tag">SALES</span></div>
     </div>
   </div>
 </section>
@@ -934,29 +981,30 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
   </div>
 </section>
 
-<!-- JP자비스 -->
-<section id="jarvis" class="sec dark-sec">
+<!-- Brink -->
+<span id="jarvis"></span>
+<section id="brink" class="sec dark-sec">
   <div class="sec-inner">
-    <p class="sec-tag fi-up">VALUE-ADD SERVICE</p>
+    <p class="sec-tag fi-up">BOUTIQUE INTEGRATION</p>
     <div class="sec-rule"></div>
-    <h2 class="sec-h">JP자비스</h2>
-    <p class="sec-sub fi-up d2" style="margin-bottom:72px;">수십만 개 상품을 24시간 자동으로 관리하는 스토어 자동화 솔루션.</p>
+    <h2 class="sec-h">Brink</h2>
+    <p class="sec-sub fi-up d2" style="margin-bottom:72px;">제이프리모가 직접 만든 부티크 연동 프로그램.<br>이탈리아 부티크 재고를 내 자사몰에 그대로 옮깁니다.</p>
     <div class="jarvis-wrap">
       <div class="jarvis-feats">
         <div class="j-feat">
-          <div class="j-feat-n">01 — 자동 연동</div>
-          <div class="j-feat-title">모든 마켓에 동시 연동, 24시간 무중단</div>
-          <div class="j-feat-body">스마트스토어·쿠팡·11번가·SSG 등 33개 마켓에 동시 연동. 환율·재고·품절·사이즈가 실시간 자동 반영됩니다.</div>
+          <div class="j-feat-n">01 — 부티크 직연동</div>
+          <div class="j-feat-title">이탈리아 재고가 실시간 그대로</div>
+          <div class="j-feat-body">50개+ 부티크와 직접 연결되어 재고·가격·사이즈가 24시간 자동 반영됩니다.</div>
         </div>
         <div class="j-feat">
-          <div class="j-feat-n">02 — 상세페이지 자동 적용</div>
-          <div class="j-feat-title">이미지·설명 자동 제공, 주문도 알아서</div>
-          <div class="j-feat-body">상품 이미지와 상세페이지가 자동으로 제공되고 그대로 업로드됩니다. 주문이 들어오면 JPRIMO가 배송까지 처리합니다.</div>
+          <div class="j-feat-n">02 — 상세페이지 자동</div>
+          <div class="j-feat-title">이미지·설명까지 바로 진열</div>
+          <div class="j-feat-body">상품 이미지와 상세페이지가 자동 생성되어 그대로 업로드됩니다.</div>
         </div>
         <div class="j-feat">
-          <div class="j-feat-n">03 — 브랜드·카테고리 선택</div>
-          <div class="j-feat-title">원하는 것만 골라 내 스토어에</div>
-          <div class="j-feat-body">800개+ 브랜드 중 스토어 콘셉트에 맞는 브랜드와 카테고리를 선택해 운영할 수 있습니다.</div>
+          <div class="j-feat-n">03 — 주문·배송 자동</div>
+          <div class="j-feat-title">주문만 받으면 나머지는 JPRIMO</div>
+          <div class="j-feat-body">주문 발생 시 현지 발주부터 국내 배송까지 JPRIMO가 처리합니다.</div>
         </div>
       </div>
       <div class="jarvis-diagram">
@@ -979,25 +1027,41 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
         </div>
         <div class="jd-arrow"><span></span></div>
         <div class="jd-node jd-server">
-          <div class="jd-tag jd-tag-gold">JP JARVIS</div>
-          <div class="jd-label">JP자비스 서버</div>
+          <div class="jd-tag jd-tag-gold">BRINK</div>
+          <div class="jd-label">Brink 서버</div>
           <div class="jd-sub">24h 재고 동기화 · 환율 가격 관리</div>
         </div>
         <div class="jd-arrow"><span></span></div>
         <div class="jd-stores-fade">
-          <div class="jd-store jd-store-main">파트너 스토어</div>
-          <div class="jd-store jd-store-echo" style="opacity:0.55">파트너 스토어</div>
-          <div class="jd-store jd-store-echo" style="opacity:0.32">파트너 스토어</div>
-          <div class="jd-store jd-store-echo" style="opacity:0.15">파트너 스토어</div>
+          <div class="jd-store jd-store-main">내 자사몰</div>
+          <div class="jd-store jd-store-echo" style="opacity:0.55">내 자사몰</div>
+          <div class="jd-store jd-store-echo" style="opacity:0.32">내 자사몰</div>
+          <div class="jd-store jd-store-echo" style="opacity:0.15">내 자사몰</div>
         </div>
         <div class="jd-callout">→ 고객 발주 시 자동 주문 처리</div>
       </div>
     </div>
     <div class="platform-wrap" style="margin-top:96px;">
-      <div class="platform-label">제휴 플랫폼 & 연동 채널</div>
-      <div class="platform-list">
-        <span class="platform-tag">머스트잇</span><span class="platform-tag">트렌비</span><span class="platform-tag">필웨이</span><span class="platform-tag">리본즈</span><span class="platform-tag">스마트스토어</span><span class="platform-tag">쿠팡</span><span class="platform-tag">11번가</span><span class="platform-tag">SSG.COM</span><span class="platform-tag">롯데ON</span><span class="platform-tag">G마켓</span><span class="platform-tag">옥션</span><span class="platform-tag">인터파크</span><span class="platform-tag">카페24</span><span class="platform-tag">쇼피파이</span><span class="platform-tag">포이즌</span><span class="platform-tag">CJ ONSTYLE</span><span class="platform-tag">LF MALL</span><span class="platform-tag">GS SHOP</span><span class="platform-tag">아임웹</span>
+      <div class="platform-label">연동 채널</div>
+      <div class="chan-grid">
+        <div class="chan-card">
+          <span class="chan-card-badge">기본</span>
+          <div class="chan-card-title">자사몰</div>
+          <div class="chan-card-body">Brink는 자사몰 연동을 기준으로 설계된 솔루션입니다. 내 브랜드로, 내 가격으로, 플랫폼 수수료 없이 운영합니다.</div>
+          <div class="chan-tags">
+            <span class="platform-tag">카페24</span><span class="platform-tag">아임웹</span><span class="platform-tag">고도몰</span>
+          </div>
+        </div>
+        <div class="chan-card">
+          <span class="chan-card-badge">선택</span>
+          <div class="chan-card-title">명품 특화 오픈마켓</div>
+          <div class="chan-card-body">명품 카테고리에 특화된 채널에 한해 상품 연동이 가능합니다. 채널별 세팅 후 추가 운영합니다.</div>
+          <div class="chan-tags">
+            <span class="platform-tag">스마트스토어</span><span class="platform-tag">11번가</span><span class="platform-tag">머스트잇</span>
+          </div>
+        </div>
       </div>
+      <div class="chan-note">※ 자체 개발 전환에 따라 연동 채널을 자사몰 중심으로 재편했습니다. 명품 판매에 실효성 있는 채널만 남겼습니다.</div>
     </div>
   </div>
 </section>
@@ -1099,8 +1163,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
   <div class="sec-inner">
     <p class="sec-tag fi-up">PRICING</p>
     <div class="sec-rule"></div>
-    <h2 class="sec-h">요금 구조</h2>
-    <p class="sec-sub fi-up d2">1·3·6·12개월 구독 선택 가능. 장기 약정일수록 월 요금이 낮아집니다.</p>
+    <h2 class="sec-h">공급 권한 &amp; 요금</h2>
+    <p class="sec-sub fi-up d2">JPRIMO의 핵심 상품은 <strong style="color:var(--gold);font-weight:700;">이탈리아 부티크 공급 권한</strong>입니다.<br>소싱 데이터는 별도 상품이지만, 패키지로 묶으면 더 낮은 가격에 함께 이용할 수 있습니다.</p>
     <div class="dur-btns">
       <button class="dur-btn active" onclick="setDur('1',this)">1개월</button>
       <button class="dur-btn" onclick="setDur('3',this)">3개월</button>
@@ -1108,8 +1172,8 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
       <button class="dur-btn" onclick="setDur('12',this)">12개월</button>
     </div>
     <div class="pricing-tabs">
-      <div class="ptab active" onclick="showTab('supply',this)">공급 멤버십</div>
-      <div class="ptab" onclick="showTab('jarvis',this)">JP자비스</div>
+      <div class="ptab active" onclick="showTab('supply',this)">공급 권한</div>
+      <div class="ptab" onclick="showTab('pkg',this)">패키지 · 추천</div>
       <div class="ptab" onclick="showTab('sourcing',this)">소싱 데이터</div>
     </div>
     <div id="tab-supply" class="pcontent active">
@@ -1117,7 +1181,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
         <thead><tr><th>서비스</th><th>1개월</th><th>3개월</th><th>6개월</th><th>12개월</th></tr></thead>
         <tbody>
           <tr class="core">
-            <td><span class="p-name">이탈리아 부티크 파트너 멤버십</span><span class="p-note">물류대행 · 정품보증 · 리얼패킹 · 보증서 포함</span></td>
+            <td><span class="p-name">이탈리아 부티크 공급 권한</span><span class="p-note">800개+ 브랜드 원가 공급 · 소량 사입 · 물류대행 · 정품보증 · 리얼패킹</span></td>
             <td><span class="p-total">80<em>만원</em></span></td>
             <td><span class="p-total">180<em>만원</em></span><span class="p-monthly">월 60만원</span></td>
             <td><span class="p-total">270<em>만원</em></span><span class="p-monthly">월 45만원</span></td>
@@ -1125,35 +1189,65 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
           </tr>
         </tbody>
       </table>
+      <div class="pkg-incl">
+        <div class="pkg-incl-card">
+          <div class="pkg-incl-n">01 — 원가 공급</div>
+          <div class="pkg-incl-t">800개+ 브랜드를 부티크 원가로</div>
+          <div class="pkg-incl-b">이탈리아 50개+ 부티크의 공급가를 그대로 받습니다. 국내 도매 단계를 거치지 않습니다.</div>
+        </div>
+        <div class="pkg-incl-card">
+          <div class="pkg-incl-n">02 — 소량 사입</div>
+          <div class="pkg-incl-t">1피스부터 최저 도매가</div>
+          <div class="pkg-incl-b">최소 수량 조건 없이 필요한 만큼만 사입합니다. 초기 재고 부담이 없습니다.</div>
+        </div>
+        <div class="pkg-incl-card">
+          <div class="pkg-incl-n">03 — 물류·통관 대행</div>
+          <div class="pkg-incl-t">현지 발주부터 국내 배송까지</div>
+          <div class="pkg-incl-b">현지 픽업·검수·통관·국내 배송을 JPRIMO가 대행합니다. 리얼패킹으로 출고됩니다.</div>
+        </div>
+        <div class="pkg-incl-card">
+          <div class="pkg-incl-n">04 — 정품 보증</div>
+          <div class="pkg-incl-t">보증서 발급 · 리스크 관리</div>
+          <div class="pkg-incl-b">전 상품 정품 보증서가 발급되며, 정품 이슈 발생 시 JPRIMO가 책임집니다.</div>
+        </div>
+      </div>
     </div>
-    <div id="tab-jarvis" class="pcontent">
+    <div id="tab-pkg" class="pcontent">
+      <div class="pkg-banner">
+        <div>
+          <div class="pkg-banner-l">PACKAGE</div>
+          <div class="pkg-banner-t">공급 권한 <em>+</em> 소싱 데이터<br>함께 가져가면 <em>최대 120만원</em> 절약</div>
+        </div>
+        <div class="pkg-save">
+          <div class="pkg-save-l">12개월 기준 월</div>
+          <div class="pkg-save-n">35<em>만원</em></div>
+        </div>
+      </div>
       <table class="ptable">
         <thead><tr><th>서비스</th><th>1개월</th><th>3개월</th><th>6개월</th><th>12개월</th></tr></thead>
         <tbody>
-          <tr>
-            <td><span class="p-name">JP자비스</span><span class="p-note">스토어 자동화 · 33개 마켓 연동 · 세팅비 30만원 별도</span></td>
-            <td><span class="p-total">60<em>만원</em></span></td>
-            <td><span class="p-total">150<em>만원</em></span><span class="p-monthly">월 50만원</span></td>
-            <td><span class="p-total">240<em>만원</em></span><span class="p-monthly">월 40만원</span></td>
-            <td><span class="p-total p-hi">360<em>만원</em></span><span class="p-monthly">월 30만원</span></td>
+          <tr class="pkg">
+            <td><span class="p-name">공급 권한 + 소싱 데이터 패키지</span><span class="p-note">부티크 공급 권한 전체 + 크림 기반 소싱 리스트 주 1~2회</span></td>
+            <td><span class="p-was">110만원</span><span class="p-total">90<em>만원</em></span><span class="p-save">20만원 절약</span></td>
+            <td><span class="p-was">255만원</span><span class="p-total">210<em>만원</em></span><span class="p-monthly">월 70만원</span><span class="p-save">45만원 절약</span></td>
+            <td><span class="p-was">390만원</span><span class="p-total">330<em>만원</em></span><span class="p-monthly">월 55만원</span><span class="p-save">60만원 절약</span></td>
+            <td><span class="p-was">540만원</span><span class="p-total p-hi">420<em>만원</em></span><span class="p-monthly">월 35만원</span><span class="p-save">120만원 절약</span></td>
           </tr>
         </tbody>
       </table>
-      <div class="jarvis-addon">
-        <div class="ja-label">마켓 추가 연동</div>
-        <div class="ja-grid">
-          <div class="ja-tier">
-            <div class="ja-tier-name">일반 마켓 채널</div>
-            <div class="ja-tier-line">세팅 <strong>30만원</strong> <span class="ja-sep">·</span> 월 운영비 <strong>15만원</strong></div>
-            <div class="ja-tier-sub">스마트스토어 · 쿠팡 · 11번가 · 오픈마켓 등</div>
-          </div>
-          <div class="ja-tier ja-tier-hi">
-            <div class="ja-tier-name">자사몰 · 해외몰</div>
-            <div class="ja-tier-line">세팅 <strong>50만원</strong> <span class="ja-sep">·</span> 월 운영비 <strong>30만원</strong></div>
-            <div class="ja-tier-sub">Cafe24 · 아임웹 · Shopify 등</div>
-          </div>
+      <div class="pkg-incl">
+        <div class="pkg-incl-card">
+          <div class="pkg-incl-n">무엇을 살지</div>
+          <div class="pkg-incl-t">소싱 데이터</div>
+          <div class="pkg-incl-b">크림 실거래 기반으로 팔리는 상품·마진 나는 상품을 주 1~2회 리스트로 받습니다.</div>
+        </div>
+        <div class="pkg-incl-card">
+          <div class="pkg-incl-n">어떻게 살지</div>
+          <div class="pkg-incl-t">공급 권한</div>
+          <div class="pkg-incl-b">고른 상품을 이탈리아 부티크 원가로 1피스부터 사입합니다.</div>
         </div>
       </div>
+      <div class="price-note-row" style="border-top:1px solid var(--cream2);color:var(--gray);">두 상품은 각각 단독 이용도 가능합니다. 패키지 가격은 단독 합산가 대비 할인된 금액입니다.</div>
     </div>
     <div id="tab-sourcing" class="pcontent">
       <table class="ptable">
@@ -1172,10 +1266,35 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
 
     <div class="addon-section">
       <div class="addon-label">부가 서비스</div>
+      <div class="brink-addon">
+        <div class="brink-addon-head">
+          <span class="brink-addon-name">Brink</span>
+          <span class="brink-addon-tag">부티크 연동 프로그램</span>
+        </div>
+        <div class="brink-addon-desc">제이프리모가 직접 만든 자사몰 연동 솔루션. 부티크 재고·가격·상세페이지가 자동 반영됩니다. 세팅비 30만원 별도.</div>
+        <div class="brink-price-row">
+          <div class="bp-cell"><div class="bp-dur">1개월</div><div class="bp-amt">60<em>만원</em></div></div>
+          <div class="bp-cell"><div class="bp-dur">3개월</div><div class="bp-amt">150<em>만원</em></div><div class="bp-mo">월 50만원</div></div>
+          <div class="bp-cell"><div class="bp-dur">6개월</div><div class="bp-amt">240<em>만원</em></div><div class="bp-mo">월 40만원</div></div>
+          <div class="bp-cell hi"><div class="bp-dur">12개월</div><div class="bp-amt">360<em>만원</em></div><div class="bp-mo">월 30만원</div></div>
+        </div>
+        <div class="ja-grid">
+          <div class="ja-tier ja-tier-hi">
+            <div class="ja-tier-name">자사몰 (기본)</div>
+            <div class="ja-tier-line">세팅 <strong>50만원</strong> <span class="ja-sep">·</span> 월 운영비 <strong>30만원</strong></div>
+            <div class="ja-tier-sub">카페24 · 아임웹 · 고도몰</div>
+          </div>
+          <div class="ja-tier">
+            <div class="ja-tier-name">명품 특화 오픈마켓 (선택)</div>
+            <div class="ja-tier-line">세팅 <strong>30만원</strong> <span class="ja-sep">·</span> 월 운영비 <strong>15만원</strong></div>
+            <div class="ja-tier-sub">스마트스토어 · 11번가 · 머스트잇</div>
+          </div>
+        </div>
+      </div>
       <div class="onetime-grid">
-        <div class="ot-card"><div class="ot-name">자사몰 제작</div><div class="ot-price">2,000,000원</div><div class="ot-desc">B2C 자사몰 구축 · JP자비스 연동 · 1회성</div></div>
+        <div class="ot-card"><div class="ot-name">자사몰 제작</div><div class="ot-price">2,000,000원</div><div class="ot-desc">B2C 자사몰 구축 · Brink 연동 · 1회성</div></div>
         <div class="ot-card"><div class="ot-name">상세페이지 제작</div><div class="ot-price">300,000원</div><div class="ot-desc">건당 · 채널별 최적화</div></div>
-        <div class="ot-card" style="background:#FFFBF2;border-color:rgba(181,138,72,0.3);"><div class="ot-name" style="color:var(--gold);">번들 할인</div><div class="ot-price" style="font-size:22px;">상담 후 협의</div><div class="ot-desc">멤버십 + JP자비스 + 소싱데이터 조합 시 추가 할인 제공</div></div>
+        <div class="ot-card" style="background:#FFFBF2;border-color:rgba(181,138,72,0.3);"><div class="ot-name" style="color:var(--gold);">번들 할인</div><div class="ot-price" style="font-size:22px;">상담 후 협의</div><div class="ot-desc">패키지 + Brink 조합 시 추가 할인 제공</div></div>
       </div>
     </div>
   </div>
@@ -1203,7 +1322,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
         <input id="f-email" class="fi" type="email" placeholder="이메일" required>
         <select id="f-service" class="fs" required>
           <option value="" disabled selected>관심 서비스 선택</option>
-          <option>공급 멤버십</option><option>JP자비스</option><option>소싱 데이터</option><option>전체 서비스 상담</option>
+          <option>공급 권한</option><option>공급 권한 + 소싱 데이터 패키지</option><option>소싱 데이터</option><option>Brink</option><option>전체 서비스 상담</option>
         </select>
         <textarea id="f-message" class="ft" placeholder="현재 운영 중인 플랫폼, 취급 브랜드, 문의 내용을 간략히 적어주세요."></textarea>
         <button type="submit" class="form-submit" id="submit-btn">상담 신청하기</button>
@@ -1220,7 +1339,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(181,138,72,0.15);paddin
         <div class="f-brand">J<em>P</em>RIMO</div>
         <p class="f-desc">이탈리아 32개+ 부티크 직계약 명품 B2B 공급 파트너.<br>중간 마진 없이, 국내 최저 공급가로.</p>
       </div>
-      <div><div class="f-col-title">서비스</div><ul class="f-links"><li><a href="#why">공급 멤버십</a></li><li><a href="#jarvis">JP자비스</a></li><li><a href="#sourcing">소싱 데이터</a></li><li><a href="#pricing">요금제</a></li></ul></div>
+      <div><div class="f-col-title">서비스</div><ul class="f-links"><li><a href="#why">공급 권한</a></li><li><a href="#brink">Brink</a></li><li><a href="#sourcing">소싱 데이터</a></li><li><a href="#pricing">요금제</a></li></ul></div>
       <div><div class="f-col-title">회사</div><ul class="f-links"><li><a href="#hero">회사 소개</a></li><li><a href="#brands">브랜드 포트폴리오</a></li><li><a href="#contact">파트너 상담</a></li></ul></div>
       <div><div class="f-col-title">문의</div><ul class="f-links"><li><a href="http://pf.kakao.com/_Qxlxaxdxj" target="_blank" rel="noopener">카카오톡 채널 @JPRIMO</a></li><li><a href="mailto:info@jprimo.com">info@jprimo.com</a></li></ul></div>
     </div>
@@ -1244,7 +1363,7 @@ function setDur(dur, el) {
   // 총비용(만원) + 월 환산(만원)
   const prices = {
     supply:   {1:{t:'80', m:''},  3:{t:'180', m:'월 60만원'}, 6:{t:'270', m:'월 45만원'}, 12:{t:'360', m:'월 30만원'}},
-    jarvis:   {1:{t:'60', m:''},  3:{t:'150', m:'월 50만원'}, 6:{t:'240', m:'월 40만원'}, 12:{t:'360', m:'월 30만원'}},
+    pkg:      {1:{t:'90', m:'', s:'20만원 절약'},  3:{t:'210', m:'월 70만원', s:'45만원 절약'}, 6:{t:'330', m:'월 55만원', s:'60만원 절약'}, 12:{t:'420', m:'월 35만원', s:'120만원 절약'}},
     sourcing: {1:{t:'30', m:''},  3:{t:'75',  m:'월 25만원'}, 6:{t:'120', m:'월 20만원'}, 12:{t:'180', m:'월 15만원'}}
   };
   document.querySelectorAll('.ptable').forEach(t => {
@@ -1261,7 +1380,7 @@ function setDur(dur, el) {
       if(!cur) return;
       const div = document.createElement('div');
       div.className = 'mobile-price-display';
-      div.innerHTML = `<span class="mpd-total">${cur.t}<em>만원</em></span>${cur.m?`<span class="mpd-monthly">${cur.m}</span>`:''}${dur==='12'?'<span class="mpd-note">12개월 약정 최저가</span>':''}`;
+      div.innerHTML = `<span class="mpd-total">${cur.t}<em>만원</em></span>${cur.m?`<span class="mpd-monthly">${cur.m}</span>`:''}${cur.s?`<span class="p-save">${cur.s}</span>`:''}${dur==='12'?'<span class="mpd-note">12개월 약정 최저가</span>':''}`;
       if(window.innerWidth <= 640) tds[0].appendChild(div);
     });
   });
@@ -1273,7 +1392,7 @@ function initCarousel(gridId, navId, dotsId, prevId, nextId, autoPlay) {
   const grid = document.getElementById(gridId);
   const nav = document.getElementById(navId);
   const dotsWrap = document.getElementById(dotsId);
-  if(!grid) return;
+  if(!grid || !nav || !dotsWrap) return;
   const items = grid.children;
   const count = items.length;
   let cur = 0;
