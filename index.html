@@ -181,6 +181,20 @@ body { margin: 0; background: #0A372A; }
     .flowline { position: relative; }
     .flowline::after { content:""; position:absolute; left:50%; top:0; width:3px; height:8px; margin-left:-1.5px; background:#C9A96E; animation: flowDot 1.9s ease-in-out infinite; }
 
+/* ── 타이포 굵기 체계 ──
+   얇은 도입 → 굵은 핵심 → 골드 고유명사. 한 덩어리에 무게를 3단으로 준다. */
+.hero-h{margin:0;}
+.hero-h .hh-1{font-weight:200;color:rgba(245,241,232,0.70);font-size:.78em;letter-spacing:-0.03em;display:block;}
+.hero-h .hh-1 em{font-style:normal;font-weight:600;color:rgba(245,241,232,0.92);}
+.hero-h .hh-2{font-weight:800;display:block;}
+.hero-h .hh-3{font-weight:800;color:#C9A96E;display:block;}
+
+.sec-h{font-weight:300;}
+.t1{font-weight:200;color:inherit;opacity:.72;display:block;font-size:.82em;letter-spacing:-0.025em;}
+.t2{font-weight:800;display:block;letter-spacing:-0.035em;}
+.sec-h.one{font-weight:800;}
+.brink-word{font-weight:800!important;letter-spacing:-0.02em!important;}
+
 /* ── 히어로 CTA / 모바일 가독성 ── */
 .hero-cta a{white-space:nowrap;transition:all .2s;}
 .hero-cta a:first-child:hover{background:#E0C695!important;}
@@ -233,15 +247,13 @@ body { margin: 0; background: #0A372A; }
     <!-- 워터마크 -->
     <div class="lat watermark" style="position: absolute; right: -30px; bottom: -66px; font-size: 250px; line-height: 1; font-weight: 300; color: rgba(245,241,232,0.045); letter-spacing: -0.04em; animation: fadeIn 2.4s ease 0.5s both;">JPRIMO</div>
 
-    <!-- 세로 골드 라인 -->
-    <div class="vrule" style="position: absolute; left: 460px; top: 0; bottom: 0; width: 1px; background: linear-gradient(180deg, rgba(201,169,110,0) 0%, rgba(201,169,110,0.42) 24%, rgba(201,169,110,0.42) 76%, rgba(201,169,110,0) 100%);"></div>
-
-    <div class="hero-pad" style="position: relative; padding: 132px 72px 116px; max-width: 1000px;">
-      <div class="lat" style="font-size: 11px; letter-spacing: 0.34em; color: #C9A96E; margin-bottom: 38px; animation: fadeUp .9s cubic-bezier(.16,.82,.26,1) .05s both;">JPRIMO INTERNATIONAL — ITALY DIRECT SUPPLY</div>
-      <div class="jp hero-h" style="font-size: 76px; line-height: 1.2; color: #F5F1E8; font-weight: 300; letter-spacing: -0.04em;">
-        <span class="mask"><span style="animation-delay:.18s;">대한민국 No.1</span></span>
-        <span class="mask"><span style="animation-delay:.30s;">명품브랜드 공급사 <span style="color: #C9A96E;">제이프리모</span></span></span>
-      </div>
+    <div class="hero-pad" style="position: relative; padding: 132px 72px 116px; max-width: 1040px;">
+      <div class="lat" style="font-size: 11px; letter-spacing: 0.34em; color: #C9A96E; margin-bottom: 34px; animation: fadeUp .9s cubic-bezier(.16,.82,.26,1) .05s both;">JPRIMO INTERNATIONAL — ITALY DIRECT SUPPLY</div>
+      <h1 class="jp hero-h" style="font-size: 76px; line-height: 1.14; color: #F5F1E8; letter-spacing: -0.045em; font-weight: 300;">
+        <span class="mask"><span class="hh-1" style="animation-delay:.18s;">대한민국 <em>No.1</em></span></span>
+        <span class="mask"><span class="hh-2" style="animation-delay:.30s;">명품브랜드 공급사</span></span>
+        <span class="mask"><span class="hh-3" style="animation-delay:.42s;">제이프리모</span></span>
+      </h1>
       <div class="rule" style="width: 84px; height: 1px; background: #C9A96E; margin: 46px 0 32px; animation-delay: .62s;"></div>
       <div class="jp" style="font-size: 23px; line-height: 1.6; color: rgba(245,241,232,0.94); font-weight: 400; animation: fadeUp .9s cubic-bezier(.16,.82,.26,1) .68s both;">이탈리아 부티크에서 직접. 중간 마진 없이.</div>
       <div style="font-size: 14.5px; line-height: 2.05; color: rgba(245,241,232,0.60); font-weight: 300; margin-top: 22px; max-width: 540px; text-wrap: pretty; animation: fadeUp .9s cubic-bezier(.16,.82,.26,1) .78s both;">도매 중간마진을 없앴습니다. 이탈리아 32개+ 부티크와 직계약, B2B 200명+ 파트너의 합산 발주량으로 국내 최저 명품 공급가를 실현합니다.</div>
@@ -256,15 +268,15 @@ body { margin: 0; background: #0A372A; }
   <div class="rv" style="border-top: 1px solid rgba(201,169,110,0.20); border-bottom: 1px solid rgba(201,169,110,0.20); background: #08301F;">
     <div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));">
       <div style="padding: 54px 48px; border-right: 1px solid rgba(201,169,110,0.16);">
-        <div class="lat num-xl" style="font-size: 54px; color: #F5F1E8; font-weight: 300; line-height: 1;">800<span style="font-size: 24px; color: #C9A96E; margin-left: 4px;">개+</span></div>
+        <div class="lat num-xl" style="font-size: 54px; color: #F5F1E8; font-weight: 500; line-height: 1;">800<span style="font-size: 24px; color: #C9A96E; margin-left: 4px;">개+</span></div>
         <div style="font-size: 12px; letter-spacing: 0.16em; color: rgba(245,241,232,0.52); margin-top: 16px; font-weight: 300;">취급 브랜드</div>
       </div>
       <div style="padding: 54px 48px; border-right: 1px solid rgba(201,169,110,0.16);">
-        <div class="lat num-xl" style="font-size: 54px; color: #F5F1E8; font-weight: 300; line-height: 1;">40<span style="font-size: 24px; color: #C9A96E; margin-left: 4px;">만개+</span></div>
+        <div class="lat num-xl" style="font-size: 54px; color: #F5F1E8; font-weight: 500; line-height: 1;">40<span style="font-size: 24px; color: #C9A96E; margin-left: 4px;">만개+</span></div>
         <div style="font-size: 12px; letter-spacing: 0.16em; color: rgba(245,241,232,0.52); margin-top: 16px; font-weight: 300;">소싱 가능 상품</div>
       </div>
       <div style="padding: 54px 48px;">
-        <div class="lat num-xl" style="font-size: 54px; color: #C9A96E; font-weight: 300; line-height: 1;"><span style="font-size: 24px; margin-right: 2px;">최대</span>70<span style="font-size: 24px; margin-left: 2px;">%</span></div>
+        <div class="lat num-xl" style="font-size: 54px; color: #C9A96E; font-weight: 500; line-height: 1;"><span style="font-size: 24px; margin-right: 2px;">최대</span>70<span style="font-size: 24px; margin-left: 2px;">%</span></div>
         <div style="font-size: 12px; letter-spacing: 0.16em; color: rgba(245,241,232,0.52); margin-top: 16px; font-weight: 300;">정가 대비 할인</div>
       </div>
     </div>
@@ -281,7 +293,7 @@ body { margin: 0; background: #0A372A; }
   <div id="why" class="rv sec-pad" style="background: #F5F1E8; color: #10231B; padding: 108px 72px;">
     <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #8A6B3E;">WHY JPRIMO</div>
     <div class="rule" style="width: 40px; height: 1px; background: #8A6B3E; margin: 18px 0 30px;"></div>
-    <div class="jp sec-h" style="font-size: 46px; line-height: 1.32; font-weight: 300; letter-spacing: -0.035em;">국내 도매공급사와<br>이게 다릅니다</div>
+    <div class="jp sec-h" style="font-size: 46px; line-height: 1.32; font-weight: 300; letter-spacing: -0.035em;"><span class="t1">국내 도매공급사와</span><span class="t2">이게 다릅니다</span></div>
     <div style="font-size: 15px; line-height: 1.9; color: rgba(16,35,27,0.62); font-weight: 300; margin-top: 22px; max-width: 620px;">같은 명품을 더 싸게, 더 다양하게, 더 안전하게. 이탈리아 직계약이 만드는 구조적 차이입니다.</div>
 
     <div style="margin-top: 48px; height: 320px; overflow: hidden;">
@@ -314,7 +326,7 @@ body { margin: 0; background: #0A372A; }
     <!-- 공급 원칙 -->
     <div style="margin-top: 96px; padding-top: 76px; border-top: 1px solid rgba(16,35,27,0.16);">
       <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #8A6B3E;">3 SUPPLY PRINCIPLES</div>
-      <div class="jp" style="font-size: 36px; margin-top: 18px; font-weight: 300; letter-spacing: -0.035em;">공급 원칙</div>
+      <div class="jp" style="font-size: 36px; margin-top: 18px; font-weight: 800; letter-spacing: -0.035em;">공급 원칙</div>
       <div style="font-size: 15px; line-height: 1.9; color: rgba(16,35,27,0.62); font-weight: 300; margin-top: 14px;">JPRIMO가 지키는 3가지 핵심 원칙</div>
       <div class="stg g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 48px;">
         <div style="border: 1px solid rgba(16,35,27,0.18); padding: 40px 34px;">
@@ -340,7 +352,7 @@ body { margin: 0; background: #0A372A; }
   <div class="rv sec-pad" style="background: #0A372A; padding: 108px 72px;">
     <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #C9A96E;">SUPPLY PROCESS</div>
     <div class="rule" style="width: 40px; height: 1px; background: #C9A96E; margin: 18px 0 30px;"></div>
-    <div class="jp sec-h" style="font-size: 46px; font-weight: 300; letter-spacing: -0.035em;">공급 구조</div>
+    <div class="jp sec-h" style="font-size: 46px; font-weight: 800; letter-spacing: -0.035em;">공급 구조</div>
     <div style="font-size: 15px; line-height: 1.9; color: rgba(245,241,232,0.58); font-weight: 300; margin-top: 20px; max-width: 660px;">이탈리아 현지부터 셀러의 스토어까지, 중간 단계 없이 직접 연결됩니다.</div>
 
     <div class="stg g4" style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; margin-top: 66px; border-top: 1px solid rgba(201,169,110,0.28);">
@@ -380,7 +392,7 @@ body { margin: 0; background: #0A372A; }
     <div style="padding: 104px 72px;">
       <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #8A6B3E;">AUTHENTICITY GUARANTEE</div>
       <div class="rule" style="width: 40px; height: 1px; background: #8A6B3E; margin: 18px 0 26px;"></div>
-      <div class="jp" style="font-size: 42px; line-height: 1.32; font-weight: 300; letter-spacing: -0.035em;">정품 보증<br>&amp; 리스크 관리</div>
+      <div class="jp" style="font-size: 42px; line-height: 1.32; font-weight: 300; letter-spacing: -0.035em;"><span class="t1">정품 보증</span><span class="t2">&amp; 리스크 관리</span></div>
       <div style="font-size: 14.5px; line-height: 1.9; color: rgba(16,35,27,0.62); font-weight: 300; margin-top: 20px;">명품 판매에서 가장 큰 불안, 4가지 시스템으로 완전히 해소합니다.</div>
       <div style="display: flex; flex-direction: column; margin-top: 44px;">
         <div style="display: flex; gap: 26px; padding: 26px 0; border-bottom: 1px solid rgba(16,35,27,0.16);">
@@ -407,7 +419,7 @@ body { margin: 0; background: #0A372A; }
   <div id="brink" class="rv sec-pad" style="background: #08301F; padding: 108px 72px;">
     <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #C9A96E;">BOUTIQUE INTEGRATION</div>
     <div class="rule" style="width: 40px; height: 1px; background: #C9A96E; margin: 18px 0 26px;"></div>
-    <div class="lat num-xl" style="font-size: 68px; font-weight: 300; letter-spacing: 0.01em; line-height: 1;">Brink</div>
+    <div class="lat num-xl brink-word" style="font-size: 68px; letter-spacing: 0.01em; line-height: 1;">Brink</div>
     <div style="font-size: 15px; line-height: 1.9; color: rgba(245,241,232,0.60); font-weight: 300; margin-top: 22px; max-width: 640px;">제이프리모가 직접 만든 부티크 연동 프로그램.<br>이탈리아 부티크 재고를 내 자사몰에 그대로 옮깁니다.</div>
 
     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 72px; align-items: start;">
@@ -497,7 +509,7 @@ body { margin: 0; background: #0A372A; }
   <div id="sourcing" class="rv sec-pad" style="background: #EAE3D5; color: #10231B; padding: 108px 72px;">
     <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #8A6B3E;">SOURCING DATA</div>
     <div class="rule" style="width: 40px; height: 1px; background: #8A6B3E; margin: 18px 0 30px;"></div>
-    <div class="jp sec-h" style="font-size: 46px; line-height: 1.32; font-weight: 300; letter-spacing: -0.035em;">자체 개발<br>소싱 데이터 프로그램</div>
+    <div class="jp sec-h" style="font-size: 46px; line-height: 1.32; font-weight: 300; letter-spacing: -0.035em;"><span class="t1">자체 개발</span><span class="t2">소싱 데이터 프로그램</span></div>
     <div style="font-size: 15px; line-height: 1.9; color: rgba(16,35,27,0.64); font-weight: 300; margin-top: 22px; max-width: 700px;">크림(KREAM) 플랫폼 기반으로 50만개의 공급 가능 상품들 중 빠른 판매상품 · 마진 남는 상품을 리스트업하여 전달드립니다.</div>
     <div style="margin-top: 46px;">
       <div style="display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
@@ -668,7 +680,7 @@ body { margin: 0; background: #0A372A; }
   <div class="rv sec-pad" style="background: #0A372A; padding: 108px 72px;">
     <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #C9A96E;">SALES CHANNELS</div>
     <div class="rule" style="width: 40px; height: 1px; background: #C9A96E; margin: 18px 0 30px;"></div>
-    <div class="jp sec-h" style="font-size: 46px; line-height: 1.32; font-weight: 300; letter-spacing: -0.035em;">다양한 판로를<br>함께 확장합니다</div>
+    <div class="jp sec-h" style="font-size: 46px; line-height: 1.32; font-weight: 300; letter-spacing: -0.035em;"><span class="t1">다양한 판로를</span><span class="t2">함께 확장합니다</span></div>
     <div style="font-size: 15px; line-height: 1.9; color: rgba(245,241,232,0.58); font-weight: 300; margin-top: 22px;">사입한 상품의 판로를 JPRIMO가 적극적으로 함께 열어드립니다.</div>
     <div class="stg g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; margin-top: 58px;">
       <div style="border: 1px solid rgba(201,169,110,0.24); padding: 44px 38px;">
@@ -694,7 +706,7 @@ body { margin: 0; background: #0A372A; }
     <div style="padding: 0 72px;">
       <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #8A6B3E;">BRAND PORTFOLIO</div>
       <div class="rule" style="width: 40px; height: 1px; background: #8A6B3E; margin: 18px 0 22px;"></div>
-      <div class="jp" style="font-size: 40px; font-weight: 300; letter-spacing: -0.035em;">800개+ 명품 브랜드</div>
+      <div class="jp" style="font-size: 40px; letter-spacing: -0.035em;"><span style="font-weight:200;opacity:.72;">800개+</span> <span style="font-weight:800;">명품 브랜드</span></div>
       <div style="font-size: 14px; color: rgba(16,35,27,0.58); font-weight: 300; margin-top: 14px;">이탈리아 부티크에서 직공급되는 주요 브랜드입니다.</div>
     </div>
     <div style="margin-top: 46px; display: flex; flex-direction: column; gap: 20px;">
@@ -708,7 +720,7 @@ body { margin: 0; background: #0A372A; }
   <div id="pricing" class="rv" style="background: #F5F1E8; color: #10231B; padding: 20px 72px 108px;">
     <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #8A6B3E;">PRICING</div>
     <div class="rule" style="width: 40px; height: 1px; background: #8A6B3E; margin: 18px 0 30px;"></div>
-    <div class="jp sec-h" style="font-size: 46px; font-weight: 300; letter-spacing: -0.035em;">공급 권한 &amp; 요금</div>
+    <div class="jp sec-h" style="font-size: 46px; font-weight: 800; letter-spacing: -0.035em;">공급 권한 &amp; 요금</div>
     <div style="font-size: 15px; line-height: 1.9; color: rgba(16,35,27,0.64); font-weight: 300; margin-top: 20px; max-width: 720px;">JPRIMO의 핵심 상품은 <strong style="color: #8A6B3E; font-weight: 700;">이탈리아 부티크 공급 권한</strong>입니다.<br>소싱 데이터는 별도 상품이지만, 패키지로 묶으면 더 낮은 가격에 함께 이용할 수 있습니다.</div>
 
     <div class="pricing-tabs">
@@ -854,7 +866,7 @@ body { margin: 0; background: #0A372A; }
   <div id="contact" class="rv sec-pad" style="background: #0A372A; padding: 108px 72px;">
     <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #C9A96E;">CONTACT</div>
     <div class="rule" style="width: 40px; height: 1px; background: #C9A96E; margin: 18px 0 30px;"></div>
-    <div class="jp sec-h" style="font-size: 46px; font-weight: 300; letter-spacing: -0.035em;">파트너 상담 신청</div>
+    <div class="jp sec-h" style="font-size: 46px; font-weight: 800; letter-spacing: -0.035em;">파트너 상담 신청</div>
     <div style="display: grid; grid-template-columns: 1fr 1.1fr; gap: 80px; margin-top: 56px;">
       <div>
         <div style="font-size: 15px; line-height: 1.95; color: rgba(245,241,232,0.62); font-weight: 300;">현재 운영 중인 스토어 현황을 알려주시면<br>가장 적합한 공급 구조와 서비스를 제안해드립니다.</div>
