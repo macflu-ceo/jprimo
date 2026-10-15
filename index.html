@@ -135,11 +135,32 @@ a:hover{color:#E0C695;}
   .contact-form{padding:28px 22px!important;}
   .contact-form .form-row{grid-template-columns:1fr!important;}
   .ptab{padding:13px 18px!important;font-size:12.5px!important;}
+
+  /* px 고정 2단 그리드 — 모바일에서 반드시 무너뜨린다
+     (안 무너지면 본문이 화면 밖으로 밀려 아예 안 보임) */
+  [style*="grid-template-columns: 620px 1fr"],
+  [style*="grid-template-columns: 300px 1fr"],
+  [style*="grid-template-columns: 1.7fr 1fr 1fr 1.2fr"]{grid-template-columns:1fr!important;}
+  .guard-img{min-height:0!important;height:260px;}
+  [style*="grid-template-columns: 300px 1fr"] > img{height:240px!important;}
+  /* 푸터: 링크 3열은 2열로 */
+  [style*="grid-template-columns: 1.7fr 1fr 1fr 1.2fr"]{gap:34px!important;}
 }
 @media(max-width:640px){
   .hero-h{font-size:clamp(30px,8.4vw,44px)!important;}
   .sec-h{font-size:clamp(26px,7.2vw,34px)!important;}
   .num-xl{font-size:34px!important;}
+
+  /* 부가 서비스 Brink 표 — 좁은 폭에서 항목명이 토막나지 않게 세로로 */
+  .brink-card{padding:24px 16px!important;}
+  .bt-head{display:none!important;}
+  .brink-card .ptable-row{grid-template-columns:1fr!important;gap:10px!important;padding:16px 14px!important;}
+  .brink-card .quote-tag{font-size:15px!important;}
+
+  /* 소싱 대표 카드: 차익 금액과 거래·찜을 위아래로 */
+  .feat-margin{flex-direction:column;align-items:flex-start!important;gap:10px!important;}
+  .feat-margin > div:last-child{text-align:left!important;}
+  .feat-margin .lat{font-size:30px!important;}
 }
 
 body { margin: 0; background: #0A372A; }
@@ -635,7 +656,7 @@ body { margin: 0; background: #0A372A; }
             </div>
           </div>
 
-          <div style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(201,169,110,0.24); display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
+          <div class="feat-margin" style="margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(201,169,110,0.24); display: flex; align-items: flex-end; justify-content: space-between; gap: 16px;">
             <div>
               <div style="font-size: 10.5px; letter-spacing: 0.18em; color: #C9A96E; font-weight: 300;">차익</div>
               <div class="lat" style="font-size: 40px; font-weight: 500; color: #C9A96E; line-height: 1.1; margin-top: 4px;">+5,264,042</div>
@@ -908,47 +929,36 @@ body { margin: 0; background: #0A372A; }
     <!-- 부가 서비스 -->
     <div style="margin-top: 68px; padding-top: 44px; border-top: 1px solid rgba(16,35,27,0.20);">
       <div class="lat" style="font-size: 11px; letter-spacing: 0.26em; color: #8A6B3E; margin-bottom: 24px;">부가 서비스</div>
-      <div style="border: 1px solid rgba(138,107,62,0.36); background: rgba(201,169,110,0.08); padding: 38px 36px;">
+      <div class="brink-card" style="border: 1px solid rgba(138,107,62,0.36); background: rgba(201,169,110,0.08); padding: 38px 36px;">
         <div style="display: flex; align-items: baseline; gap: 14px;">
           <div class="lat" style="font-size: 30px; color: #8A6B3E; font-weight: 500;">Brink</div>
           <div class="lat" style="font-size: 11px; letter-spacing: 0.16em; color: rgba(16,35,27,0.52);">부티크 연동 프로그램</div>
         </div>
         <div style="font-size: 13px; line-height: 1.8; color: rgba(16,35,27,0.62); margin-top: 12px; font-weight: 300;">제이프리모가 직접 만든 자사몰 연동 솔루션. 부티크 재고·가격·상세페이지가 자동 반영됩니다.<br><strong style="color: #10231B; font-weight: 700;">이미 운영 중인 자사몰 또는 오픈마켓에 연동하는 기준</strong>입니다.</div>
         <div style="background: #FFFFFF; margin-top: 24px;">
-          <div style="display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 14px 20px; border-bottom: 1px solid rgba(16,35,27,0.16);">
+          <div class="bt-head" style="display: grid; grid-template-columns: 1fr auto; padding: 14px 20px; border-bottom: 1px solid rgba(16,35,27,0.16);">
             <div class="lat" style="font-size: 10.5px; letter-spacing: 0.1em; color: rgba(16,35,27,0.54);">항목</div>
-            <div class="lat" style="font-size: 10.5px; letter-spacing: 0.1em; color: rgba(16,35,27,0.54); text-align: right;">세팅비 (1회)</div>
-            <div class="lat" style="font-size: 10.5px; letter-spacing: 0.1em; color: rgba(16,35,27,0.54); text-align: right;">월 이용료</div>
+            <div class="lat" style="font-size: 10.5px; letter-spacing: 0.1em; color: rgba(16,35,27,0.54); text-align: right;">비용</div>
           </div>
-          <div class="ptable-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 18px 20px; border-bottom: 1px solid rgba(16,35,27,0.10); background: rgba(201,169,110,0.10); align-items: center;">
+          <div class="ptable-row" style="display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 18px 20px; border-bottom: 1px solid rgba(16,35,27,0.10); background: rgba(201,169,110,0.10); align-items: center;">
             <div><div class="jp" style="font-size: 14.5px; font-weight: 700;">Brink 기본 이용료</div><div style="font-size: 11.5px; color: rgba(16,35,27,0.55); margin-top: 4px; font-weight: 300;">프로그램 이용 · 부티크 데이터 연동</div></div>
-            <div class="lat" style="text-align: right; font-size: 19px; color: #8A6B3E; font-weight: 500;">30<span style="font-size: 12px;">만원</span></div>
-            <div style="text-align: right;"><div class="lat" style="font-size: 19px; color: #8A6B3E; font-weight: 500;">60<span style="font-size: 12px;">만원</span></div><div style="font-size: 11px; color: rgba(16,35,27,0.55); margin-top: 3px; font-weight: 300;">12개월 약정 시 월 30만원</div></div>
+            <div class="jp quote-tag" style="font-size: 14px; color: #8A6B3E; font-weight: 700; white-space: nowrap;">가격협의</div>
           </div>
-          <div class="ptable-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 18px 20px; border-bottom: 1px solid rgba(16,35,27,0.10); align-items: center;">
+          <div class="ptable-row" style="display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 18px 20px; border-bottom: 1px solid rgba(16,35,27,0.10); align-items: center;">
             <div><div class="jp" style="font-size: 14.5px; font-weight: 700;">자사몰 연동</div><div style="font-size: 11.5px; color: rgba(16,35,27,0.55); margin-top: 4px; font-weight: 300;">카페24 · 아임웹 · 고도몰</div></div>
-            <div class="lat" style="text-align: right; font-size: 19px; font-weight: 500;">50<span style="font-size: 12px; color: rgba(16,35,27,0.55);">만원</span></div>
-            <div class="lat" style="text-align: right; font-size: 19px; font-weight: 500;">30<span style="font-size: 12px; color: rgba(16,35,27,0.55);">만원</span></div>
+            <div class="jp quote-tag" style="font-size: 14px; color: #8A6B3E; font-weight: 700; white-space: nowrap;">가격협의</div>
           </div>
-          <div class="ptable-row" style="display: grid; grid-template-columns: 2fr 1fr 1fr; padding: 18px 20px; align-items: center;">
+          <div class="ptable-row" style="display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 18px 20px; align-items: center;">
             <div><div class="jp" style="font-size: 14.5px; font-weight: 700;">명품 오픈마켓 연동 <span class="lat" style="font-size: 10px; color: #8A6B3E; background: rgba(201,169,110,0.18); padding: 2px 8px; margin-left: 6px;">선택</span></div><div style="font-size: 11.5px; color: rgba(16,35,27,0.55); margin-top: 4px; font-weight: 300;">스마트스토어 · 11번가 · 머스트잇</div></div>
-            <div class="lat" style="text-align: right; font-size: 19px; font-weight: 500;">30<span style="font-size: 12px; color: rgba(16,35,27,0.55);">만원</span></div>
-            <div class="lat" style="text-align: right; font-size: 19px; font-weight: 500;">15<span style="font-size: 12px; color: rgba(16,35,27,0.55);">만원</span></div>
+            <div class="jp quote-tag" style="font-size: 14px; color: #8A6B3E; font-weight: 700; white-space: nowrap;">가격협의</div>
           </div>
         </div>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 18px; font-size: 12px; color: rgba(16,35,27,0.62); font-weight: 300;">
-          <span class="lat" style="font-size: 10px; letter-spacing: 0.16em; color: #8A6B3E;">기본 이용료 약정별</span>
-          <span>1개월 <strong style="font-weight: 700; color: #10231B;">월 60만원</strong></span>
-          <span>3개월 <strong style="font-weight: 700; color: #10231B;">월 50만원</strong></span>
-          <span>6개월 <strong style="font-weight: 700; color: #10231B;">월 40만원</strong></span>
-          <span>12개월 <strong style="font-weight: 700; color: #8A6B3E;">월 30만원</strong></span>
-        </div>
-        <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(138,107,62,0.26); font-size: 12px; color: rgba(16,35,27,0.60); line-height: 1.75; font-weight: 300;">※ 운영 중인 스토어가 없다면 <strong style="color: #8A6B3E; font-weight: 700;">자사몰 제작(200만원)</strong>이 먼저 필요합니다. 제작 후 위 연동 비용이 적용됩니다.</div>
+        <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid rgba(138,107,62,0.26); font-size: 12px; color: rgba(16,35,27,0.60); line-height: 1.75; font-weight: 300;">※ 운영 중인 스토어가 없다면 <strong style="color: #8A6B3E; font-weight: 700;">자사몰 제작</strong>이 먼저 필요합니다. 약정 기간과 연동 채널 수에 따라 달라지므로 상담 시 안내드립니다.</div>
       </div>
       <div class="g3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(16,35,27,0.14); margin-top: 22px;">
-        <div style="background: #F5F1E8; padding: 34px 30px;"><div style="font-size: 11.5px; color: rgba(16,35,27,0.52); letter-spacing: 0.06em; font-weight: 300;">자사몰 제작</div><div class="lat" style="font-size: 30px; margin-top: 10px; font-weight: 500;">2,000,000원</div><div style="font-size: 12px; color: rgba(16,35,27,0.56); margin-top: 8px; font-weight: 300;">스토어가 없는 경우 · B2C 자사몰 구축 · 1회성</div></div>
-        <div style="background: #F5F1E8; padding: 34px 30px;"><div style="font-size: 11.5px; color: rgba(16,35,27,0.52); letter-spacing: 0.06em; font-weight: 300;">상세페이지 제작</div><div class="lat" style="font-size: 30px; margin-top: 10px; font-weight: 500;">300,000원</div><div style="font-size: 12px; color: rgba(16,35,27,0.56); margin-top: 8px; font-weight: 300;">건당 · 채널별 최적화</div></div>
-        <div style="background: rgba(201,169,110,0.12); padding: 34px 30px;"><div style="font-size: 11.5px; color: #8A6B3E; letter-spacing: 0.06em; font-weight: 500;">번들 할인</div><div class="jp" style="font-size: 23px; margin-top: 10px; font-weight: 700;">상담 후 협의</div><div style="font-size: 12px; color: rgba(16,35,27,0.56); margin-top: 8px; font-weight: 300;">패키지 + Brink 조합 시 추가 할인 제공</div></div>
+        <div style="background: #F5F1E8; padding: 34px 30px;"><div style="font-size: 11.5px; color: rgba(16,35,27,0.52); letter-spacing: 0.06em; font-weight: 300;">자사몰 제작</div><div class="jp quote-tag" style="font-size: 23px; margin-top: 10px; font-weight: 700; color: #8A6B3E;">가격협의</div><div style="font-size: 12px; color: rgba(16,35,27,0.56); margin-top: 8px; font-weight: 300;">스토어가 없는 경우 · B2C 자사몰 구축 · 1회성</div></div>
+        <div style="background: #F5F1E8; padding: 34px 30px;"><div style="font-size: 11.5px; color: rgba(16,35,27,0.52); letter-spacing: 0.06em; font-weight: 300;">상세페이지 제작</div><div class="jp quote-tag" style="font-size: 23px; margin-top: 10px; font-weight: 700; color: #8A6B3E;">가격협의</div><div style="font-size: 12px; color: rgba(16,35,27,0.56); margin-top: 8px; font-weight: 300;">건당 · 채널별 최적화</div></div>
+        <div style="background: rgba(201,169,110,0.12); padding: 34px 30px;"><div style="font-size: 11.5px; color: #8A6B3E; letter-spacing: 0.06em; font-weight: 500;">번들 할인</div><div class="jp quote-tag" style="font-size: 23px; margin-top: 10px; font-weight: 700;">가격협의</div><div style="font-size: 12px; color: rgba(16,35,27,0.56); margin-top: 8px; font-weight: 300;">패키지 + Brink 조합 시 추가 할인 제공</div></div>
       </div>
     </div>
   </div>
