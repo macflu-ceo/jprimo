@@ -296,6 +296,12 @@ body { margin: 0; background: #0A372A; }
   .pkg-banner > div:last-child{text-align:left!important;}
 }
 
+
+/* 좌우 여백 통일: 내용은 1296px 중앙, 배경·이미지는 전폭 */
+.guard-split > :nth-child(2){padding-right:max(40px,calc((100vw - 1296px)/2))!important;}
+@media(max-width:900px){ .guard-split > :nth-child(2){padding:64px 26px!important;} }
+@media(max-width:640px){ .guard-split > :nth-child(2){padding:56px 22px!important;} }
+
 /* ── 타이포 굵기 체계 ──
    얇은 도입 → 굵은 핵심 → 골드 고유명사. 한 덩어리에 무게를 3단으로 준다. */
 .hero-h{margin:0;}
@@ -499,7 +505,7 @@ body { margin: 0; background: #0A372A; }
   </div>
 
   <!-- ============ AUTHENTICITY GUARANTEE ============ -->
-  <div class="rv" style="display: grid; grid-template-columns: 620px 1fr; background: #F5F1E8; color: #10231B;">
+  <div class="rv guard-split" style="display: grid; grid-template-columns: 620px 1fr; background: #F5F1E8; color: #10231B;">
     <div class="guard-img" style="position: relative; overflow: hidden; min-height: 640px;">
       <img src="/images/guarantee.jpg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(0.4);">
       <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,55,42,0.42) 0%, rgba(10,55,42,0.20) 100%);"></div>
@@ -818,7 +824,7 @@ body { margin: 0; background: #0A372A; }
 
   <!-- ============ BRAND PORTFOLIO ============ -->
   <div id="brands" class="rv" style="background: #F5F1E8; color: #10231B; padding: 96px 0;">
-    <div style="padding: 0 72px;">
+    <div class="sec-pad" style="padding: 0 72px;">
       <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #8A6B3E;">BRAND PORTFOLIO</div>
       <div class="rule" style="width: 40px; height: 1px; background: #8A6B3E; margin: 18px 0 22px;"></div>
       <div class="jp" style="font-size: 40px; letter-spacing: -0.035em;"><span style="font-weight:200;opacity:.72;">800개+</span> <span style="font-weight:800;">명품 브랜드</span></div>
@@ -832,7 +838,7 @@ body { margin: 0; background: #0A372A; }
   </div>
 
   <!-- ============ PRICING ============ -->
-  <div id="pricing" class="rv" style="background: #F5F1E8; color: #10231B; padding: 20px 72px 108px;">
+  <div id="pricing" class="rv sec-pad" style="background: #F5F1E8; color: #10231B; padding: 20px 72px 108px;">
     <div class="lat" style="font-size: 11px; letter-spacing: 0.32em; color: #8A6B3E;">PRICING</div>
     <div class="rule" style="width: 40px; height: 1px; background: #8A6B3E; margin: 18px 0 30px;"></div>
     <div class="jp sec-h" style="font-size: 46px; font-weight: 800; letter-spacing: -0.035em;">공급 권한 &amp; 멤버십</div>
@@ -997,7 +1003,7 @@ body { margin: 0; background: #0A372A; }
   </div>
 
   <!-- ============ FOOTER ============ -->
-  <div class="rv" style="background: #06251C; padding: 62px 72px 46px; border-top: 1px solid rgba(201,169,110,0.16);">
+  <div class="rv sec-pad" style="background: #06251C; padding: 62px 72px 46px; border-top: 1px solid rgba(201,169,110,0.16);">
     <div style="display: grid; grid-template-columns: 1.7fr 1fr 1fr 1.2fr; gap: 48px;">
       <div>
         <div style="display: flex; align-items: center; gap: 12px;">
